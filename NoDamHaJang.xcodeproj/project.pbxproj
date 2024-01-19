@@ -8,20 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		7691D5AD2C9BE5A000AE5C14 /* NoDamHaJangApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7691D5AC2C9BE5A000AE5C14 /* NoDamHaJangApp.swift */; };
-		7691D5AF2C9BE5A000AE5C14 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7691D5AE2C9BE5A000AE5C14 /* ContentView.swift */; };
 		7691D5B12C9BE5A100AE5C14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7691D5B02C9BE5A100AE5C14 /* Assets.xcassets */; };
 		7691D5B42C9BE5A100AE5C14 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7691D5B32C9BE5A100AE5C14 /* Preview Assets.xcassets */; };
 		7691D5BB2C9BE5CF00AE5C14 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 7691D5BA2C9BE5CF00AE5C14 /* .gitignore */; };
+		76A648F72C9C0B2F00C03092 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A648F62C9C0B2F00C03092 /* TabBarView.swift */; };
+		76A648F92C9C0BE200C03092 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A648F82C9C0BE200C03092 /* HomeView.swift */; };
+		76A648FB2C9C0C0500C03092 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A648FA2C9C0C0500C03092 /* CalendarView.swift */; };
+		76A648FD2C9C0DE700C03092 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A648FC2C9C0DE700C03092 /* GraphView.swift */; };
+		76A648FF2C9C0DED00C03092 /* GoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A648FE2C9C0DED00C03092 /* GoalView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7691D5A92C9BE5A000AE5C14 /* NoDamHaJang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoDamHaJang.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7691D5AC2C9BE5A000AE5C14 /* NoDamHaJangApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoDamHaJangApp.swift; sourceTree = "<group>"; };
-		7691D5AE2C9BE5A000AE5C14 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7691D5B02C9BE5A100AE5C14 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7691D5B32C9BE5A100AE5C14 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7691D5BA2C9BE5CF00AE5C14 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		76A648F52C9C020900C03092 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		76A648F62C9C0B2F00C03092 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
+		76A648F82C9C0BE200C03092 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		76A648FA2C9C0C0500C03092 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		76A648FC2C9C0DE700C03092 /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
+		76A648FE2C9C0DED00C03092 /* GoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,9 +65,13 @@
 			children = (
 				76A648F52C9C020900C03092 /* Info.plist */,
 				7691D5AC2C9BE5A000AE5C14 /* NoDamHaJangApp.swift */,
-				7691D5AE2C9BE5A000AE5C14 /* ContentView.swift */,
 				7691D5B02C9BE5A100AE5C14 /* Assets.xcassets */,
 				7691D5B22C9BE5A100AE5C14 /* Preview Content */,
+				76A648F62C9C0B2F00C03092 /* TabBarView.swift */,
+				76A648F82C9C0BE200C03092 /* HomeView.swift */,
+				76A648FA2C9C0C0500C03092 /* CalendarView.swift */,
+				76A648FC2C9C0DE700C03092 /* GraphView.swift */,
+				76A648FE2C9C0DED00C03092 /* GoalView.swift */,
 			);
 			path = NoDamHaJang;
 			sourceTree = "<group>";
@@ -143,7 +155,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7691D5AF2C9BE5A000AE5C14 /* ContentView.swift in Sources */,
+				76A648FD2C9C0DE700C03092 /* GraphView.swift in Sources */,
+				76A648FF2C9C0DED00C03092 /* GoalView.swift in Sources */,
+				76A648F92C9C0BE200C03092 /* HomeView.swift in Sources */,
+				76A648F72C9C0B2F00C03092 /* TabBarView.swift in Sources */,
+				76A648FB2C9C0C0500C03092 /* CalendarView.swift in Sources */,
 				7691D5AD2C9BE5A000AE5C14 /* NoDamHaJangApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
