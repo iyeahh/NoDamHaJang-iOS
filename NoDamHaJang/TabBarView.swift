@@ -7,28 +7,61 @@
 
 import SwiftUI
 
+private enum TabBar: CaseIterable {
+    case home
+    case calendar
+    case graph
+    case goal
+
+    var image: Image {
+        switch self {
+        case .home:
+            Image(systemName: "house.fill")
+        case .calendar:
+            Image(systemName: "calendar")
+        case .graph:
+            Image(systemName: "chart.bar.xaxis.ascending")
+        case .goal:
+            Image(systemName: "person.fill.checkmark")
+        }
+    }
+
+    var title: String {
+        switch self {
+        case .home:
+            "Home"
+        case .calendar:
+            "Calendar"
+        case .graph:
+            "Graph"
+        case .goal:
+            "Goal"
+        }
+    }
+}
+
 struct TabBarView: View {
     var body: some View {
         TabView {
             HomeView()
                 .tabItem {
-                    Image(systemName: "house.fill")
-                    Text("Home")
+                    TabBar.home.image
+                    Text(TabBar.home.title)
                 }
             CalendarView()
                 .tabItem {
-                    Image(systemName: "calendar")
-                    Text("Calendar")
+                    TabBar.calendar.image
+                    Text(TabBar.calendar.title)
                 }
             GraphView()
                 .tabItem {
-                    Image(systemName: "chart.bar.xaxis.ascending")
-                    Text("Graph")
+                    TabBar.graph.image
+                    Text(TabBar.graph.title)
                 }
             GoalView()
                 .tabItem {
-                    Image(systemName: "person.fill.checkmark")
-                    Text("Goal")
+                    TabBar.goal.image
+                    Text(TabBar.goal.title)
                 }
         }
     }
