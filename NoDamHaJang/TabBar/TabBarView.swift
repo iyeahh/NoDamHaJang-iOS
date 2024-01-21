@@ -64,6 +64,7 @@ struct TabBarView: View {
                     Text(TabBar.goal.title)
                 }
         }
+        .accentColor(Constant.ColorType.purple)
     }
 }
 

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		760C7BA72C9D63A000CA78A6 /* Color+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760C7BA62C9D63A000CA78A6 /* Color+.swift */; };
+		760C7BAA2C9D63DE00CA78A6 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760C7BA92C9D63DE00CA78A6 /* Constant.swift */; };
+		760C7BB22C9D6C8C00CA78A6 /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 760C7BB12C9D6C8C00CA78A6 /* FSCalendar */; };
+		760C7BB42C9D6DF100CA78A6 /* FSCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760C7BB32C9D6DF100CA78A6 /* FSCalendarView.swift */; };
 		7691D5AD2C9BE5A000AE5C14 /* NoDamHaJangApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7691D5AC2C9BE5A000AE5C14 /* NoDamHaJangApp.swift */; };
 		7691D5B12C9BE5A100AE5C14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7691D5B02C9BE5A100AE5C14 /* Assets.xcassets */; };
 		7691D5B42C9BE5A100AE5C14 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7691D5B32C9BE5A100AE5C14 /* Preview Assets.xcassets */; };
@@ -19,6 +23,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		760C7BA62C9D63A000CA78A6 /* Color+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+.swift"; sourceTree = "<group>"; };
+		760C7BA92C9D63DE00CA78A6 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		760C7BB32C9D6DF100CA78A6 /* FSCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FSCalendarView.swift; sourceTree = "<group>"; };
 		7691D5A92C9BE5A000AE5C14 /* NoDamHaJang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoDamHaJang.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7691D5AC2C9BE5A000AE5C14 /* NoDamHaJangApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoDamHaJangApp.swift; sourceTree = "<group>"; };
 		7691D5B02C9BE5A100AE5C14 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -37,12 +44,69 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				760C7BB22C9D6C8C00CA78A6 /* FSCalendar in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		760C7BA02C9D58FF00CA78A6 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				76A648F82C9C0BE200C03092 /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		760C7BA12C9D590700CA78A6 /* Goal */ = {
+			isa = PBXGroup;
+			children = (
+				76A648FE2C9C0DED00C03092 /* GoalView.swift */,
+			);
+			path = Goal;
+			sourceTree = "<group>";
+		};
+		760C7BA22C9D591000CA78A6 /* Graph */ = {
+			isa = PBXGroup;
+			children = (
+				76A648FC2C9C0DE700C03092 /* GraphView.swift */,
+			);
+			path = Graph;
+			sourceTree = "<group>";
+		};
+		760C7BA32C9D591900CA78A6 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				76A648FA2C9C0C0500C03092 /* CalendarView.swift */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
+		760C7BA42C9D593200CA78A6 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				76A648F62C9C0B2F00C03092 /* TabBarView.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		760C7BA52C9D636100CA78A6 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				760C7BA62C9D63A000CA78A6 /* Color+.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		760C7BA82C9D63CD00CA78A6 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				760C7BA92C9D63DE00CA78A6 /* Constant.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		7691D5A02C9BE5A000AE5C14 = {
 			isa = PBXGroup;
 			children = (
@@ -63,15 +127,18 @@
 		7691D5AB2C9BE5A000AE5C14 /* NoDamHaJang */ = {
 			isa = PBXGroup;
 			children = (
-				76A648F52C9C020900C03092 /* Info.plist */,
+				760C7BA82C9D63CD00CA78A6 /* Helper */,
+				760C7BA52C9D636100CA78A6 /* Extension */,
 				7691D5AC2C9BE5A000AE5C14 /* NoDamHaJangApp.swift */,
+				760C7BA42C9D593200CA78A6 /* TabBar */,
+				760C7BA02C9D58FF00CA78A6 /* Home */,
+				760C7BA32C9D591900CA78A6 /* Calendar */,
+				760C7BA22C9D591000CA78A6 /* Graph */,
+				760C7BA12C9D590700CA78A6 /* Goal */,
+				76A648F52C9C020900C03092 /* Info.plist */,
 				7691D5B02C9BE5A100AE5C14 /* Assets.xcassets */,
 				7691D5B22C9BE5A100AE5C14 /* Preview Content */,
-				76A648F62C9C0B2F00C03092 /* TabBarView.swift */,
-				76A648F82C9C0BE200C03092 /* HomeView.swift */,
-				76A648FA2C9C0C0500C03092 /* CalendarView.swift */,
-				76A648FC2C9C0DE700C03092 /* GraphView.swift */,
-				76A648FE2C9C0DED00C03092 /* GoalView.swift */,
+				760C7BB32C9D6DF100CA78A6 /* FSCalendarView.swift */,
 			);
 			path = NoDamHaJang;
 			sourceTree = "<group>";
@@ -100,6 +167,9 @@
 			dependencies = (
 			);
 			name = NoDamHaJang;
+			packageProductDependencies = (
+				760C7BB12C9D6C8C00CA78A6 /* FSCalendar */,
+			);
 			productName = NoDamHaJang;
 			productReference = 7691D5A92C9BE5A000AE5C14 /* NoDamHaJang.app */;
 			productType = "com.apple.product-type.application";
@@ -128,6 +198,9 @@
 				Base,
 			);
 			mainGroup = 7691D5A02C9BE5A000AE5C14;
+			packageReferences = (
+				760C7BB02C9D6C8C00CA78A6 /* XCRemoteSwiftPackageReference "FSCalendar" */,
+			);
 			productRefGroup = 7691D5AA2C9BE5A000AE5C14 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -155,8 +228,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				760C7BA72C9D63A000CA78A6 /* Color+.swift in Sources */,
 				76A648FD2C9C0DE700C03092 /* GraphView.swift in Sources */,
 				76A648FF2C9C0DED00C03092 /* GoalView.swift in Sources */,
+				760C7BAA2C9D63DE00CA78A6 /* Constant.swift in Sources */,
+				760C7BB42C9D6DF100CA78A6 /* FSCalendarView.swift in Sources */,
 				76A648F92C9C0BE200C03092 /* HomeView.swift in Sources */,
 				76A648F72C9C0B2F00C03092 /* TabBarView.swift in Sources */,
 				76A648FB2C9C0C0500C03092 /* CalendarView.swift in Sources */,
@@ -378,6 +454,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		760C7BB02C9D6C8C00CA78A6 /* XCRemoteSwiftPackageReference "FSCalendar" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/WenchaoD/FSCalendar.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.8.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		760C7BB12C9D6C8C00CA78A6 /* FSCalendar */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 760C7BB02C9D6C8C00CA78A6 /* XCRemoteSwiftPackageReference "FSCalendar" */;
+			productName = FSCalendar;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7691D5A12C9BE5A000AE5C14 /* Project object */;
 }
