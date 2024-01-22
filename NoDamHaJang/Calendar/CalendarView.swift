@@ -18,6 +18,16 @@ struct CalendarView: View {
             VStack {
                 FSCalendarView()
                     .frame(height: 500)
+                HStack {
+                    Text("목표 10개  /")
+                        .foregroundStyle(Constant.ColorType.purple)
+                    Text("실행 10개")
+                        .foregroundStyle(Constant.ColorType.purple)
+                    Spacer()
+                    Text("성공")
+                        .foregroundStyle(.blue)
+                }
+                .padding()
             }
             .padding(.top, 20)
             .background(Constant.ColorType.secondary.opacity(0.4))
