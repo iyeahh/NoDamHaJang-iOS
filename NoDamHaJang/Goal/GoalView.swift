@@ -47,7 +47,7 @@ struct GoalView: View {
             .cornerRadius(15)
             .padding()
 
-            Text("\((selectedNumber * 250).formatted())원을 절약했어요!")
+            Text("한달이면 \((selectedNumber * 250 * 30).formatted())원을 절약할 수 있어요!")
         }
     }
 
