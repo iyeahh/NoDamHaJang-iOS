@@ -20,6 +20,12 @@
 		76A648FB2C9C0C0500C03092 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A648FA2C9C0C0500C03092 /* CalendarView.swift */; };
 		76A648FD2C9C0DE700C03092 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A648FC2C9C0DE700C03092 /* GraphView.swift */; };
 		76A648FF2C9C0DED00C03092 /* GoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A648FE2C9C0DED00C03092 /* GoalView.swift */; };
+		76A7C5902C9FF9EA00ABB814 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 76A7C58F2C9FF9EA00ABB814 /* RealmSwift */; };
+		76A7C5932C9FFA2800ABB814 /* SmokingTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A7C5922C9FFA2800ABB814 /* SmokingTable.swift */; };
+		76A7C5962C9FFAE200ABB814 /* SmokingTableRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A7C5952C9FFAE200ABB814 /* SmokingTableRepository.swift */; };
+		76A7C5992C9FFC1200ABB814 /* DateFormatterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A7C5982C9FFC1200ABB814 /* DateFormatterManager.swift */; };
+		76A7C59C2C9FFF7400ABB814 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A7C59B2C9FFF7400ABB814 /* ViewModelType.swift */; };
+		76A7C59E2C9FFFAE00ABB814 /* GoalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A7C59D2C9FFFAE00ABB814 /* GoalViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +43,11 @@
 		76A648FA2C9C0C0500C03092 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		76A648FC2C9C0DE700C03092 /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
 		76A648FE2C9C0DED00C03092 /* GoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalView.swift; sourceTree = "<group>"; };
+		76A7C5922C9FFA2800ABB814 /* SmokingTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmokingTable.swift; sourceTree = "<group>"; };
+		76A7C5952C9FFAE200ABB814 /* SmokingTableRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmokingTableRepository.swift; sourceTree = "<group>"; };
+		76A7C5982C9FFC1200ABB814 /* DateFormatterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterManager.swift; sourceTree = "<group>"; };
+		76A7C59B2C9FFF7400ABB814 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
+		76A7C59D2C9FFFAE00ABB814 /* GoalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76A7C5902C9FF9EA00ABB814 /* RealmSwift in Frameworks */,
 				760C7BB22C9D6C8C00CA78A6 /* FSCalendar in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -63,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				76A648FE2C9C0DED00C03092 /* GoalView.swift */,
+				76A7C59D2C9FFFAE00ABB814 /* GoalViewModel.swift */,
 			);
 			path = Goal;
 			sourceTree = "<group>";
@@ -127,6 +140,8 @@
 		7691D5AB2C9BE5A000AE5C14 /* NoDamHaJang */ = {
 			isa = PBXGroup;
 			children = (
+				76A7C59A2C9FFF6500ABB814 /* Protocol */,
+				76A7C5912C9FF9F400ABB814 /* Util */,
 				760C7BA82C9D63CD00CA78A6 /* Helper */,
 				760C7BA52C9D636100CA78A6 /* Extension */,
 				7691D5AC2C9BE5A000AE5C14 /* NoDamHaJangApp.swift */,
@@ -151,6 +166,40 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		76A7C5912C9FF9F400ABB814 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				76A7C5972C9FFC0200ABB814 /* Formatter */,
+				76A7C5942C9FFACE00ABB814 /* Realm */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		76A7C5942C9FFACE00ABB814 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				76A7C5922C9FFA2800ABB814 /* SmokingTable.swift */,
+				76A7C5952C9FFAE200ABB814 /* SmokingTableRepository.swift */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
+		76A7C5972C9FFC0200ABB814 /* Formatter */ = {
+			isa = PBXGroup;
+			children = (
+				76A7C5982C9FFC1200ABB814 /* DateFormatterManager.swift */,
+			);
+			path = Formatter;
+			sourceTree = "<group>";
+		};
+		76A7C59A2C9FFF6500ABB814 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				76A7C59B2C9FFF7400ABB814 /* ViewModelType.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -169,6 +218,7 @@
 			name = NoDamHaJang;
 			packageProductDependencies = (
 				760C7BB12C9D6C8C00CA78A6 /* FSCalendar */,
+				76A7C58F2C9FF9EA00ABB814 /* RealmSwift */,
 			);
 			productName = NoDamHaJang;
 			productReference = 7691D5A92C9BE5A000AE5C14 /* NoDamHaJang.app */;
@@ -200,6 +250,7 @@
 			mainGroup = 7691D5A02C9BE5A000AE5C14;
 			packageReferences = (
 				760C7BB02C9D6C8C00CA78A6 /* XCRemoteSwiftPackageReference "FSCalendar" */,
+				76A7C58E2C9FF9EA00ABB814 /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = 7691D5AA2C9BE5A000AE5C14 /* Products */;
 			projectDirPath = "";
@@ -233,10 +284,15 @@
 				76A648FF2C9C0DED00C03092 /* GoalView.swift in Sources */,
 				760C7BAA2C9D63DE00CA78A6 /* Constant.swift in Sources */,
 				760C7BB42C9D6DF100CA78A6 /* FSCalendarView.swift in Sources */,
+				76A7C5932C9FFA2800ABB814 /* SmokingTable.swift in Sources */,
 				76A648F92C9C0BE200C03092 /* HomeView.swift in Sources */,
+				76A7C59E2C9FFFAE00ABB814 /* GoalViewModel.swift in Sources */,
 				76A648F72C9C0B2F00C03092 /* TabBarView.swift in Sources */,
 				76A648FB2C9C0C0500C03092 /* CalendarView.swift in Sources */,
+				76A7C5962C9FFAE200ABB814 /* SmokingTableRepository.swift in Sources */,
+				76A7C5992C9FFC1200ABB814 /* DateFormatterManager.swift in Sources */,
 				7691D5AD2C9BE5A000AE5C14 /* NoDamHaJangApp.swift in Sources */,
+				76A7C59C2C9FFF7400ABB814 /* ViewModelType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -464,6 +520,14 @@
 				minimumVersion = 2.8.4;
 			};
 		};
+		76A7C58E2C9FF9EA00ABB814 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				kind = exactVersion;
+				version = 10.54.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -471,6 +535,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 760C7BB02C9D6C8C00CA78A6 /* XCRemoteSwiftPackageReference "FSCalendar" */;
 			productName = FSCalendar;
+		};
+		76A7C58F2C9FF9EA00ABB814 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 76A7C58E2C9FF9EA00ABB814 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

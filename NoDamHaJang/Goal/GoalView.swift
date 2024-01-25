@@ -6,9 +6,11 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 struct GoalView: View {
     @State var selectedNumber = 0
+    @StateObject private var viewModel = GoalViewModel()
 
     var body: some View {
         VStack {
@@ -23,7 +25,7 @@ struct GoalView: View {
 
     func setGoalButtonView() -> some View {
         Button {
-
+            viewModel.action(.setGoalButtonTapped(smokeCount: selectedNumber))
         } label: {
             RoundedRectangle(cornerRadius: 30)
                 .padding()
