@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct HomeView: View {
-    @State private var smokeCount = 0
-    @State private var progress = 80
+    @StateObject private var viewModel = HomeViewModel()
 
     init() {
         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor(Constant.ColorType.accent)]
@@ -27,11 +26,14 @@ struct HomeView: View {
             .background(Constant.ColorType.secondary.opacity(0.4))
             .navigationTitle("노담러의 하루")
         }
+        .task {
+            viewModel.action(.viewOnTask)
+        }
     }
 
     func smokeButtonView() -> some View {
         Button {
-            smokeCount += 1
+            viewModel.action(.addSmokeButtonTapped)
         } label: {
             RoundedRectangle(cornerRadius: 30)
                 .padding()
@@ -50,7 +52,7 @@ struct HomeView: View {
             .frame(height: UIScreen.main.bounds.width + 20)
             .foregroundStyle(Constant.ColorType.primary.opacity(0.5))
             .overlay(alignment: Alignment(horizontal: .center, vertical: .center), content: {
-                RoundProgressView(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.width + 20, color1: Constant.ColorType.purple, color2: Constant.ColorType.secondary, percent: $progress)
+                RoundProgressView(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.width + 20, color1: Constant.ColorType.purple, color2: Constant.ColorType.secondary, percent: viewModel.output.progress)
                     .padding(.top, 50)
             })
             .overlay(alignment: Alignment(horizontal: .leading, vertical: .top)) {
@@ -66,14 +68,14 @@ struct HomeView: View {
 
     func smokeCountView() -> some View {
         VStack(spacing: 10) {
-            Text("\(smokeCount)번 흡연 중")
+            Text("\(viewModel.output.smokeCount)번 흡연 중")
                 .font(.title)
                 .bold()
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.leading, 20)
             HStack(spacing: 20) {
-                Text("목표: 10번")
-                Text("남은 횟수: 10번")
+                Text("목표: \(viewModel.output.goalCount)번")
+                Text("남은 횟수: \(viewModel.output.goalCount - viewModel.output.smokeCount)번")
             }
             .font(.title3)
             .frame(maxWidth: .infinity, alignment: .leading)
@@ -92,8 +94,8 @@ struct RoundProgressView : View {
     var height: CGFloat
     var color1: Color
     var color2: Color
-    @Binding var percent: Int
-    
+    var percent: Int
+
     var body: some View {
         let multiplier = width / 40
         let progress = 1 - (CGFloat(percent) / 100)

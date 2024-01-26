@@ -26,6 +26,7 @@
 		76A7C5992C9FFC1200ABB814 /* DateFormatterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A7C5982C9FFC1200ABB814 /* DateFormatterManager.swift */; };
 		76A7C59C2C9FFF7400ABB814 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A7C59B2C9FFF7400ABB814 /* ViewModelType.swift */; };
 		76A7C59E2C9FFFAE00ABB814 /* GoalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A7C59D2C9FFFAE00ABB814 /* GoalViewModel.swift */; };
+		76A7C5A42CA006A900ABB814 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A7C5A32CA006A900ABB814 /* HomeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		76A7C5982C9FFC1200ABB814 /* DateFormatterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterManager.swift; sourceTree = "<group>"; };
 		76A7C59B2C9FFF7400ABB814 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
 		76A7C59D2C9FFFAE00ABB814 /* GoalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalViewModel.swift; sourceTree = "<group>"; };
+		76A7C5A32CA006A900ABB814 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,7 +68,8 @@
 		760C7BA02C9D58FF00CA78A6 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				76A648F82C9C0BE200C03092 /* HomeView.swift */,
+				76A7C5A22CA0069B00ABB814 /* View */,
+				76A7C5A12CA0069500ABB814 /* ViewModel */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -74,8 +77,8 @@
 		760C7BA12C9D590700CA78A6 /* Goal */ = {
 			isa = PBXGroup;
 			children = (
-				76A648FE2C9C0DED00C03092 /* GoalView.swift */,
-				76A7C59D2C9FFFAE00ABB814 /* GoalViewModel.swift */,
+				76A7C5A02CA0068800ABB814 /* View */,
+				76A7C59F2CA0068200ABB814 /* ViewModel */,
 			);
 			path = Goal;
 			sourceTree = "<group>";
@@ -200,6 +203,38 @@
 			path = Protocol;
 			sourceTree = "<group>";
 		};
+		76A7C59F2CA0068200ABB814 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				76A7C59D2C9FFFAE00ABB814 /* GoalViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		76A7C5A02CA0068800ABB814 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				76A648FE2C9C0DED00C03092 /* GoalView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		76A7C5A12CA0069500ABB814 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				76A7C5A32CA006A900ABB814 /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		76A7C5A22CA0069B00ABB814 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				76A648F82C9C0BE200C03092 /* HomeView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -292,6 +327,7 @@
 				76A7C5962C9FFAE200ABB814 /* SmokingTableRepository.swift in Sources */,
 				76A7C5992C9FFC1200ABB814 /* DateFormatterManager.swift in Sources */,
 				7691D5AD2C9BE5A000AE5C14 /* NoDamHaJangApp.swift in Sources */,
+				76A7C5A42CA006A900ABB814 /* HomeViewModel.swift in Sources */,
 				76A7C59C2C9FFF7400ABB814 /* ViewModelType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

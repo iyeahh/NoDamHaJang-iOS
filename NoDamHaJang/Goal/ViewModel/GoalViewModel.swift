@@ -25,9 +25,7 @@ extension GoalViewModel {
         let setGoalButtonTapped = PassthroughSubject<Int, Never>()
     }
 
-    struct Output {
-        let toastMessage = "목표가 설정되었어요!"
-    }
+    struct Output { }
 
     func transform() {
         input

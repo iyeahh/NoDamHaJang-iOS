@@ -21,6 +21,20 @@ final class SmokingTableRepository {
         }
     }
 
+    func fetchSmokeCount() -> Int {
+        let data = readSmokingTable().filter {
+            $0.id == DateFormatterManager.shared.dateFormat()
+        }
+        return data.first?.smokeCount ?? 0
+    }
+
+    func fetchGoalCount() -> Int {
+        let data = readSmokingTable().filter {
+            $0.id == DateFormatterManager.shared.dateFormat()
+        }
+        return data.first?.goalCount ?? 0
+    }
+
     func createSmokingTable(goalCount: Int) {
         do {
             try realm.write {
@@ -55,6 +69,21 @@ final class SmokingTableRepository {
             createSmokingTable(goalCount: goalCount)
         } else {
             editGoalCount(id: DateFormatterManager.shared.dateFormat(), goalCount: goalCount)
+        }
+    }
+
+    func editSmokeCount(smokeCount: Int) {
+        do {
+            try realm.write {
+                realm.create(
+                    SmokingTable.self,
+                    value: ["id": DateFormatterManager.shared.dateFormat(),
+                            "smokeCount": smokeCount],
+                    update: .modified
+                )
+            }
+        } catch {
+            print("흡연 횟수가 변경되지 않았어요")
         }
     }
 
