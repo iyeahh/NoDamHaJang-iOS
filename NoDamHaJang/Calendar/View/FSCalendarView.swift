@@ -10,6 +10,8 @@ import SwiftUI
 import UIKit
 
 struct FSCalendarView: UIViewRepresentable {
+    @StateObject var viewModel: CalendarViewModel
+
     class Coordinator: NSObject, FSCalendarDelegate, FSCalendarDataSource {
         var parent: FSCalendarView
 
@@ -17,21 +19,29 @@ struct FSCalendarView: UIViewRepresentable {
             self.parent = parent
         }
 
+        func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyyMMdd"
+            let dateString = formatter.string(from: date)
+
+            parent.viewModel.action(.seletedDate(date: dateString))
+        }
+
         // 커스텀 셀 사용 설정
         func calendar(_ calendar: FSCalendar, cellFor date: Date, at position: FSCalendarMonthPosition) -> FSCalendarCell {
             let cell = calendar.dequeueReusableCell(withIdentifier: "CustomCalendarCell", for: date, at: position) as! CustomCalendarCell
 
-            // 특정 날짜에 텍스트 추가
             let formatter = DateFormatter()
-            formatter.dateFormat = "yyyy-MM-dd"
+            formatter.dateFormat = "yyyyMMdd"
             let dateString = formatter.string(from: date)
 
-            if dateString == "2024-09-20" {
-                cell.smokeCountLabel.text = "Event"
-            } else {
-                cell.smokeCountLabel.text = ""
-            }
+            let array = SmokingTableRepository.shared.readSmokingTable()
 
+            array.forEach { smokingTable in
+                if dateString == smokingTable.id {
+                    cell.smokeCountLabel.text = "\(smokingTable.smokeCount)번"
+                }
+            }
             return cell
         }
     }
@@ -70,12 +80,12 @@ class CustomCalendarCell: FSCalendarCell {
 
         smokeCountLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            smokeCountLabel.topAnchor.constraint(equalTo: self.titleLabel.bottomAnchor, constant: 2), // 날짜 밑에 배치
+            smokeCountLabel.topAnchor.constraint(equalTo: self.titleLabel.bottomAnchor, constant: 2),
             smokeCountLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor)
         ])
 
         smokeCountLabel.font = UIFont.systemFont(ofSize: 10)
-        smokeCountLabel.textColor = .gray
+        smokeCountLabel.textColor = UIColor(Constant.ColorType.purple)
     }
 
     required init?(coder aDecoder: NSCoder) {

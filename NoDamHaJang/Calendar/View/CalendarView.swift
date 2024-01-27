@@ -9,6 +9,8 @@ import SwiftUI
 import FSCalendar
 
 struct CalendarView: View {
+    @StateObject private var viewModel = CalendarViewModel()
+
     init() {
         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor(Constant.ColorType.accent)]
    }
@@ -25,7 +27,7 @@ struct CalendarView: View {
 
     func calendarView() -> some View {
         VStack {
-            FSCalendarView()
+            FSCalendarView(viewModel: viewModel)
                 .frame(height: 500)
             descriptionView()
         }
@@ -35,13 +37,13 @@ struct CalendarView: View {
 
     func descriptionView() -> some View {
         HStack {
-            Text("목표 10개  /")
+            Text("목표 \(viewModel.output.smokingData.goalCount)개  /")
                 .foregroundStyle(Constant.ColorType.purple)
-            Text("실행 10개")
+            Text("실행 \(viewModel.output.smokingData.smokeCount)개")
                 .foregroundStyle(Constant.ColorType.purple)
             Spacer()
-            Text("성공")
-                .foregroundStyle(.blue)
+            Text("\(viewModel.output.smokingData.isSuccess)")
+                .foregroundStyle(viewModel.output.smokingData.color)
         }
         .padding()
     }

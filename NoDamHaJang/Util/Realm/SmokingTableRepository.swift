@@ -72,6 +72,13 @@ final class SmokingTableRepository {
         }
     }
 
+    func getSmokingData(date: String) -> SmokingData {
+        let data = readSmokingTable().filter {
+            $0.id == date
+        }
+        return SmokingData(goalCount: data.first?.goalCount ?? 0, smokeCount: data.first?.smokeCount ?? 0)
+    }
+
     func editSmokeCount(smokeCount: Int) {
         do {
             try realm.write {

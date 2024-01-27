@@ -11,6 +11,8 @@
 		760C7BAA2C9D63DE00CA78A6 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760C7BA92C9D63DE00CA78A6 /* Constant.swift */; };
 		760C7BB22C9D6C8C00CA78A6 /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 760C7BB12C9D6C8C00CA78A6 /* FSCalendar */; };
 		760C7BB42C9D6DF100CA78A6 /* FSCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760C7BB32C9D6DF100CA78A6 /* FSCalendarView.swift */; };
+		7623B0E32CA1516500CFD90B /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7623B0E22CA1516500CFD90B /* CalendarViewModel.swift */; };
+		7623B0E72CA1541400CFD90B /* SmokingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7623B0E62CA1541400CFD90B /* SmokingData.swift */; };
 		7691D5AD2C9BE5A000AE5C14 /* NoDamHaJangApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7691D5AC2C9BE5A000AE5C14 /* NoDamHaJangApp.swift */; };
 		7691D5B12C9BE5A100AE5C14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7691D5B02C9BE5A100AE5C14 /* Assets.xcassets */; };
 		7691D5B42C9BE5A100AE5C14 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7691D5B32C9BE5A100AE5C14 /* Preview Assets.xcassets */; };
@@ -33,6 +35,8 @@
 		760C7BA62C9D63A000CA78A6 /* Color+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+.swift"; sourceTree = "<group>"; };
 		760C7BA92C9D63DE00CA78A6 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		760C7BB32C9D6DF100CA78A6 /* FSCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FSCalendarView.swift; sourceTree = "<group>"; };
+		7623B0E22CA1516500CFD90B /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
+		7623B0E62CA1541400CFD90B /* SmokingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmokingData.swift; sourceTree = "<group>"; };
 		7691D5A92C9BE5A000AE5C14 /* NoDamHaJang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoDamHaJang.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7691D5AC2C9BE5A000AE5C14 /* NoDamHaJangApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoDamHaJangApp.swift; sourceTree = "<group>"; };
 		7691D5B02C9BE5A100AE5C14 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -94,7 +98,9 @@
 		760C7BA32C9D591900CA78A6 /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
-				76A648FA2C9C0C0500C03092 /* CalendarView.swift */,
+				7623B0E52CA153F800CFD90B /* Model */,
+				7623B0E02CA14E7F00CFD90B /* View */,
+				7623B0DF2CA14E7900CFD90B /* ViewModel */,
 			);
 			path = Calendar;
 			sourceTree = "<group>";
@@ -121,6 +127,31 @@
 				760C7BA92C9D63DE00CA78A6 /* Constant.swift */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		7623B0DF2CA14E7900CFD90B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				7623B0E22CA1516500CFD90B /* CalendarViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		7623B0E02CA14E7F00CFD90B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				76A648FA2C9C0C0500C03092 /* CalendarView.swift */,
+				760C7BB32C9D6DF100CA78A6 /* FSCalendarView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7623B0E52CA153F800CFD90B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7623B0E62CA1541400CFD90B /* SmokingData.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		7691D5A02C9BE5A000AE5C14 = {
@@ -156,7 +187,6 @@
 				76A648F52C9C020900C03092 /* Info.plist */,
 				7691D5B02C9BE5A100AE5C14 /* Assets.xcassets */,
 				7691D5B22C9BE5A100AE5C14 /* Preview Content */,
-				760C7BB32C9D6DF100CA78A6 /* FSCalendarView.swift */,
 			);
 			path = NoDamHaJang;
 			sourceTree = "<group>";
@@ -322,12 +352,14 @@
 				76A7C5932C9FFA2800ABB814 /* SmokingTable.swift in Sources */,
 				76A648F92C9C0BE200C03092 /* HomeView.swift in Sources */,
 				76A7C59E2C9FFFAE00ABB814 /* GoalViewModel.swift in Sources */,
+				7623B0E32CA1516500CFD90B /* CalendarViewModel.swift in Sources */,
 				76A648F72C9C0B2F00C03092 /* TabBarView.swift in Sources */,
 				76A648FB2C9C0C0500C03092 /* CalendarView.swift in Sources */,
 				76A7C5962C9FFAE200ABB814 /* SmokingTableRepository.swift in Sources */,
 				76A7C5992C9FFC1200ABB814 /* DateFormatterManager.swift in Sources */,
 				7691D5AD2C9BE5A000AE5C14 /* NoDamHaJangApp.swift in Sources */,
 				76A7C5A42CA006A900ABB814 /* HomeViewModel.swift in Sources */,
+				7623B0E72CA1541400CFD90B /* SmokingData.swift in Sources */,
 				76A7C59C2C9FFF7400ABB814 /* ViewModelType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -471,6 +503,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -506,6 +539,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

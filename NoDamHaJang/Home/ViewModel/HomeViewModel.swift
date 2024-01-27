@@ -27,9 +27,7 @@ extension HomeViewModel {
     }
 
     struct Output {
-        var smokeCount = 0
-        var goalCount = 0
-        var progress = 0
+        var smokingData = SmokingData(goalCount: 0, smokeCount: 0)
     }
 
     func transform() {
@@ -37,14 +35,9 @@ extension HomeViewModel {
             .viewOnTask
             .sink { [weak self] _ in
                 guard let self else { return }
-                output.goalCount = SmokingTableRepository.shared.fetchGoalCount()
-                output.smokeCount = SmokingTableRepository.shared.fetchSmokeCount()
-                if output.smokeCount == 0 || output.goalCount == 0 {
-                    output.progress = 0
-                } else {
-                    let value = Int((Double(output.smokeCount) / Double(output.goalCount)) * 100)
-                    output.progress = value
-                }
+                let goalCount = SmokingTableRepository.shared.fetchGoalCount()
+                let smokeCount = SmokingTableRepository.shared.fetchSmokeCount()
+                output.smokingData = SmokingData(goalCount: goalCount, smokeCount: smokeCount)
             }
             .store(in: &cancellables)
 
@@ -52,14 +45,8 @@ extension HomeViewModel {
             .addSmokeButtonTapped
             .sink { [weak self] _ in
                 guard let self else { return }
-                output.smokeCount += 1
-                SmokingTableRepository.shared.editSmokeCount(smokeCount: output.smokeCount)
-                if output.smokeCount == 0 || output.goalCount == 0 {
-                    output.progress = 0
-                } else {
-                    let value = Int((Double(output.smokeCount) / Double(output.goalCount)) * 100)
-                    output.progress = value
-                }
+                output.smokingData.smokeCount += 1
+                SmokingTableRepository.shared.editSmokeCount(smokeCount: output.smokingData.smokeCount)
             }
             .store(in: &cancellables)
     }

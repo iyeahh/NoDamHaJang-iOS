@@ -52,7 +52,7 @@ struct HomeView: View {
             .frame(height: UIScreen.main.bounds.width + 20)
             .foregroundStyle(Constant.ColorType.primary.opacity(0.5))
             .overlay(alignment: Alignment(horizontal: .center, vertical: .center), content: {
-                RoundProgressView(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.width + 20, color1: Constant.ColorType.purple, color2: Constant.ColorType.secondary, percent: viewModel.output.progress)
+                RoundProgressView(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.width + 20, color1: Constant.ColorType.purple, color2: Constant.ColorType.secondary, percent: viewModel.output.smokingData.progress)
                     .padding(.top, 50)
             })
             .overlay(alignment: Alignment(horizontal: .leading, vertical: .top)) {
@@ -68,14 +68,14 @@ struct HomeView: View {
 
     func smokeCountView() -> some View {
         VStack(spacing: 10) {
-            Text("\(viewModel.output.smokeCount)번 흡연 중")
+            Text("\(viewModel.output.smokingData.smokeCount)번 흡연 중")
                 .font(.title)
                 .bold()
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.leading, 20)
             HStack(spacing: 20) {
-                Text("목표: \(viewModel.output.goalCount)번")
-                Text("남은 횟수: \(viewModel.output.goalCount - viewModel.output.smokeCount)번")
+                Text("목표: \(viewModel.output.smokingData.goalCount)번")
+                Text("남은 횟수: \(viewModel.output.smokingData.remaningCount)번")
             }
             .font(.title3)
             .frame(maxWidth: .infinity, alignment: .leading)
