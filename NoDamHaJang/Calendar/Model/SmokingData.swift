@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SmokingData {
+    let date: String
     let goalCount: Int
     var smokeCount: Int
 
@@ -18,6 +19,10 @@ struct SmokingData {
             let value = Int((Double(smokeCount) / Double(goalCount)) * 100)
             return value
         }
+    }
+
+    var chartDate: String {
+        DateFormatterManager.shared.chartDate(date: date)
     }
 
     var remaningCount: Int {

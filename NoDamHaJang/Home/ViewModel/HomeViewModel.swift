@@ -27,7 +27,7 @@ extension HomeViewModel {
     }
 
     struct Output {
-        var smokingData = SmokingData(goalCount: 0, smokeCount: 0)
+        var smokingData = SmokingData(date: DateFormatterManager.shared.dateFormat(), goalCount: 0, smokeCount: 0)
     }
 
     func transform() {
@@ -37,7 +37,7 @@ extension HomeViewModel {
                 guard let self else { return }
                 let goalCount = SmokingTableRepository.shared.fetchGoalCount()
                 let smokeCount = SmokingTableRepository.shared.fetchSmokeCount()
-                output.smokingData = SmokingData(goalCount: goalCount, smokeCount: smokeCount)
+                output.smokingData = SmokingData(date: DateFormatterManager.shared.dateFormat(), goalCount: goalCount, smokeCount: smokeCount)
             }
             .store(in: &cancellables)
 

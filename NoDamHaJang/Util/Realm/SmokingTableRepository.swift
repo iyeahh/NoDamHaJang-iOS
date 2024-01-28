@@ -21,6 +21,21 @@ final class SmokingTableRepository {
         }
     }
 
+    func readOneWeekSmokingTable() -> [SmokingData] {
+        var list: [Date] = []
+        for i in 0...6 {
+            list.append(Calendar.current.date(byAdding: .day, value: -i, to: Date()) ?? Date())
+        }
+        let stringList = list.map { date in
+            DateFormatterManager.shared.dateFormat(date: date)
+        }
+        return stringList.map { value in
+            getSmokingData(date: value)
+        }.sorted {
+            $0.date < $1.date
+        }
+    }
+
     func fetchSmokeCount() -> Int {
         let data = readSmokingTable().filter {
             $0.id == DateFormatterManager.shared.dateFormat()
@@ -76,7 +91,7 @@ final class SmokingTableRepository {
         let data = readSmokingTable().filter {
             $0.id == date
         }
-        return SmokingData(goalCount: data.first?.goalCount ?? 0, smokeCount: data.first?.smokeCount ?? 0)
+        return SmokingData(date: data.first?.id ?? date, goalCount: data.first?.goalCount ?? 0, smokeCount: data.first?.smokeCount ?? 0)
     }
 
     func editSmokeCount(smokeCount: Int) {

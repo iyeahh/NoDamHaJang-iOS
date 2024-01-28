@@ -17,6 +17,7 @@
 		7691D5B12C9BE5A100AE5C14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7691D5B02C9BE5A100AE5C14 /* Assets.xcassets */; };
 		7691D5B42C9BE5A100AE5C14 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7691D5B32C9BE5A100AE5C14 /* Preview Assets.xcassets */; };
 		7691D5BB2C9BE5CF00AE5C14 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 7691D5BA2C9BE5CF00AE5C14 /* .gitignore */; };
+		769B58EA2CA3E7FE00FB5503 /* GraphViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769B58E92CA3E7FE00FB5503 /* GraphViewModel.swift */; };
 		76A648F72C9C0B2F00C03092 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A648F62C9C0B2F00C03092 /* TabBarView.swift */; };
 		76A648F92C9C0BE200C03092 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A648F82C9C0BE200C03092 /* HomeView.swift */; };
 		76A648FB2C9C0C0500C03092 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A648FA2C9C0C0500C03092 /* CalendarView.swift */; };
@@ -42,6 +43,7 @@
 		7691D5B02C9BE5A100AE5C14 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7691D5B32C9BE5A100AE5C14 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7691D5BA2C9BE5CF00AE5C14 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		769B58E92CA3E7FE00FB5503 /* GraphViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphViewModel.swift; sourceTree = "<group>"; };
 		76A648F52C9C020900C03092 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		76A648F62C9C0B2F00C03092 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		76A648F82C9C0BE200C03092 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -90,7 +92,8 @@
 		760C7BA22C9D591000CA78A6 /* Graph */ = {
 			isa = PBXGroup;
 			children = (
-				76A648FC2C9C0DE700C03092 /* GraphView.swift */,
+				769B58E82CA3E7F100FB5503 /* View */,
+				769B58E72CA3E7E900FB5503 /* ViewModel */,
 			);
 			path = Graph;
 			sourceTree = "<group>";
@@ -197,6 +200,22 @@
 				7691D5B32C9BE5A100AE5C14 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		769B58E72CA3E7E900FB5503 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				769B58E92CA3E7FE00FB5503 /* GraphViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		769B58E82CA3E7F100FB5503 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				76A648FC2C9C0DE700C03092 /* GraphView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		76A7C5912C9FF9F400ABB814 /* Util */ = {
@@ -355,6 +374,7 @@
 				7623B0E32CA1516500CFD90B /* CalendarViewModel.swift in Sources */,
 				76A648F72C9C0B2F00C03092 /* TabBarView.swift in Sources */,
 				76A648FB2C9C0C0500C03092 /* CalendarView.swift in Sources */,
+				769B58EA2CA3E7FE00FB5503 /* GraphViewModel.swift in Sources */,
 				76A7C5962C9FFAE200ABB814 /* SmokingTableRepository.swift in Sources */,
 				76A7C5992C9FFC1200ABB814 /* DateFormatterManager.swift in Sources */,
 				7691D5AD2C9BE5A000AE5C14 /* NoDamHaJangApp.swift in Sources */,

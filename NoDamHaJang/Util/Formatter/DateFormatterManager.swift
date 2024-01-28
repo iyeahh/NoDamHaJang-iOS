@@ -22,4 +22,20 @@ final class DateFormatterManager {
         dateFormatter.dateFormat = "yyyyMMdd"
         return dateFormatter.string(from: nowDate)
     }
+
+    func dateFormat(date: Date) -> String {
+        dateFormatter.dateFormat = "yyyyMMdd"
+        return dateFormatter.string(from: date)
+    }
+
+    func chartDate(date: String) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyyMMdd"
+
+        let convertDate = dateFormatter.date(from: date)
+
+        let myDateFormatter = DateFormatter()
+        myDateFormatter.dateFormat = "MM/dd"
+        return myDateFormatter.string(from: convertDate!)
+    }
 }
