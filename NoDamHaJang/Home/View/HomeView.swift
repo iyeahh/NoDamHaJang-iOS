@@ -16,19 +16,30 @@ struct HomeView: View {
 
     var body: some View {
         NavigationStack {
-            VStack {
-                smokeCountView()
-                roundedRectangleView()
-                Spacer()
-                smokeButtonView()
-            }
-            .foregroundStyle(Constant.ColorType.purple)
-            .background(Constant.ColorType.secondary.opacity(0.4))
+            homeView()
+                .toolbar {
+                    ToolbarItemGroup(placement: .topBarTrailing) {
+                        NavigationLink("금연 기사 보기") {
+                            LinkListView()
+                        }
+                    }
+                }
             .navigationTitle("노담러의 하루")
         }
         .task {
             viewModel.action(.viewOnTask)
         }
+    }
+
+    func homeView() -> some View {
+        VStack {
+            smokeCountView()
+            roundedRectangleView()
+            Spacer()
+            smokeButtonView()
+        }
+        .foregroundStyle(Constant.ColorType.purple)
+        .background(Constant.ColorType.secondary.opacity(0.4))
     }
 
     func smokeButtonView() -> some View {
