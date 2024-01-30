@@ -9,23 +9,22 @@ import SwiftUI
 import LinkPresentation
 
 struct LinkListView: View {
-
+    @StateObject private var viewModel = LinkListViewModel()
     @State var redrawPreview = false
 
-    let links: [StringLink] = [
-        StringLink(string: "https://www.newsis.com/view/NISX20240926_0002900734")
-    ]
-
     var body: some View {
-        List(links) { l in
+        List(viewModel.output.newItemList) { l in
             VStack {
                 NavigationLink {
-                    CustomWKWebView(url: "https://www.newsis.com/view/NISX20240926_0002900734")
+                    CustomWKWebView(url: l.link)
                 } label: {
-                    LinkRow(previewURL: URL(string: l.string)!, redraw: self.$redrawPreview)
+                    LinkRow(previewURL: URL(string: l.link)!, redraw: self.$redrawPreview)
                 }
             }
         }.environment(\.defaultMinListRowHeight, 50)
+            .task {
+                viewModel.action(.viewOnTask)
+            }
     }
 }
 
@@ -58,11 +57,6 @@ struct LinkRow: UIViewRepresentable {
     func updateUIView(_ uiView: LPLinkView, context: Context) {
 
     }
-}
-
-struct StringLink: Identifiable {
-    var id = UUID()
-    var string: String
 }
 
 struct LinkListView_Previews: PreviewProvider {

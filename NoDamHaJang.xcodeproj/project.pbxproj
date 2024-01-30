@@ -19,6 +19,16 @@
 		7691D5BB2C9BE5CF00AE5C14 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 7691D5BA2C9BE5CF00AE5C14 /* .gitignore */; };
 		769AA1ED2CA53B5400CEE5DE /* LinkListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769AA1EC2CA53B5400CEE5DE /* LinkListView.swift */; };
 		769AA1EF2CA53C2500CEE5DE /* CustomWKWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769AA1EE2CA53C2500CEE5DE /* CustomWKWebView.swift */; };
+		769AA1F12CA540F100CEE5DE /* LinkListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769AA1F02CA540F100CEE5DE /* LinkListViewModel.swift */; };
+		769AA1F42CA5417100CEE5DE /* TargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769AA1F32CA5417100CEE5DE /* TargetType.swift */; };
+		769AA1F72CA5418800CEE5DE /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 769AA1F62CA5418800CEE5DE /* Alamofire */; };
+		769AA1F92CA541A200CEE5DE /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769AA1F82CA541A200CEE5DE /* Router.swift */; };
+		769AA1FB2CA541EF00CEE5DE /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769AA1FA2CA541EF00CEE5DE /* Header.swift */; };
+		769AA1FD2CA541FF00CEE5DE /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769AA1FC2CA541FF00CEE5DE /* NetworkManager.swift */; };
+		769AA1FF2CA5431400CEE5DE /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769AA1FE2CA5431400CEE5DE /* APIKey.swift */; };
+		769AA2022CA543CA00CEE5DE /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769AA2012CA543CA00CEE5DE /* News.swift */; };
+		769AA2042CA5474E00CEE5DE /* NewsItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769AA2032CA5474E00CEE5DE /* NewsItems.swift */; };
+		769AA2062CA54A0A00CEE5DE /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769AA2052CA54A0A00CEE5DE /* String+.swift */; };
 		769B58EA2CA3E7FE00FB5503 /* GraphViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769B58E92CA3E7FE00FB5503 /* GraphViewModel.swift */; };
 		76A648F72C9C0B2F00C03092 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A648F62C9C0B2F00C03092 /* TabBarView.swift */; };
 		76A648F92C9C0BE200C03092 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A648F82C9C0BE200C03092 /* HomeView.swift */; };
@@ -47,6 +57,15 @@
 		7691D5BA2C9BE5CF00AE5C14 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		769AA1EC2CA53B5400CEE5DE /* LinkListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkListView.swift; sourceTree = "<group>"; };
 		769AA1EE2CA53C2500CEE5DE /* CustomWKWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomWKWebView.swift; sourceTree = "<group>"; };
+		769AA1F02CA540F100CEE5DE /* LinkListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkListViewModel.swift; sourceTree = "<group>"; };
+		769AA1F32CA5417100CEE5DE /* TargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetType.swift; sourceTree = "<group>"; };
+		769AA1F82CA541A200CEE5DE /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		769AA1FA2CA541EF00CEE5DE /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
+		769AA1FC2CA541FF00CEE5DE /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		769AA1FE2CA5431400CEE5DE /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
+		769AA2012CA543CA00CEE5DE /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
+		769AA2032CA5474E00CEE5DE /* NewsItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsItems.swift; sourceTree = "<group>"; };
+		769AA2052CA54A0A00CEE5DE /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		769B58E92CA3E7FE00FB5503 /* GraphViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphViewModel.swift; sourceTree = "<group>"; };
 		76A648F52C9C020900C03092 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		76A648F62C9C0B2F00C03092 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
@@ -67,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				769AA1F72CA5418800CEE5DE /* Alamofire in Frameworks */,
 				76A7C5902C9FF9EA00ABB814 /* RealmSwift in Frameworks */,
 				760C7BB22C9D6C8C00CA78A6 /* FSCalendar in Frameworks */,
 			);
@@ -78,6 +98,7 @@
 		760C7BA02C9D58FF00CA78A6 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				769AA2002CA543BD00CEE5DE /* Model */,
 				76A7C5A22CA0069B00ABB814 /* View */,
 				76A7C5A12CA0069500ABB814 /* ViewModel */,
 			);
@@ -124,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				760C7BA62C9D63A000CA78A6 /* Color+.swift */,
+				769AA2052CA54A0A00CEE5DE /* String+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -206,6 +228,27 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		769AA1F22CA5412B00CEE5DE /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				769AA1FE2CA5431400CEE5DE /* APIKey.swift */,
+				769AA1F32CA5417100CEE5DE /* TargetType.swift */,
+				769AA1F82CA541A200CEE5DE /* Router.swift */,
+				769AA1FA2CA541EF00CEE5DE /* Header.swift */,
+				769AA1FC2CA541FF00CEE5DE /* NetworkManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		769AA2002CA543BD00CEE5DE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				769AA2012CA543CA00CEE5DE /* News.swift */,
+				769AA2032CA5474E00CEE5DE /* NewsItems.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		769B58E72CA3E7E900FB5503 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -225,6 +268,7 @@
 		76A7C5912C9FF9F400ABB814 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				769AA1F22CA5412B00CEE5DE /* Network */,
 				76A7C5972C9FFC0200ABB814 /* Formatter */,
 				76A7C5942C9FFACE00ABB814 /* Realm */,
 			);
@@ -276,6 +320,7 @@
 			isa = PBXGroup;
 			children = (
 				76A7C5A32CA006A900ABB814 /* HomeViewModel.swift */,
+				769AA1F02CA540F100CEE5DE /* LinkListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -309,6 +354,7 @@
 			packageProductDependencies = (
 				760C7BB12C9D6C8C00CA78A6 /* FSCalendar */,
 				76A7C58F2C9FF9EA00ABB814 /* RealmSwift */,
+				769AA1F62CA5418800CEE5DE /* Alamofire */,
 			);
 			productName = NoDamHaJang;
 			productReference = 7691D5A92C9BE5A000AE5C14 /* NoDamHaJang.app */;
@@ -341,6 +387,7 @@
 			packageReferences = (
 				760C7BB02C9D6C8C00CA78A6 /* XCRemoteSwiftPackageReference "FSCalendar" */,
 				76A7C58E2C9FF9EA00ABB814 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				769AA1F52CA5418800CEE5DE /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 7691D5AA2C9BE5A000AE5C14 /* Products */;
 			projectDirPath = "";
@@ -383,11 +430,20 @@
 				76A648F72C9C0B2F00C03092 /* TabBarView.swift in Sources */,
 				76A648FB2C9C0C0500C03092 /* CalendarView.swift in Sources */,
 				769B58EA2CA3E7FE00FB5503 /* GraphViewModel.swift in Sources */,
+				769AA1F12CA540F100CEE5DE /* LinkListViewModel.swift in Sources */,
 				76A7C5962C9FFAE200ABB814 /* SmokingTableRepository.swift in Sources */,
+				769AA1FB2CA541EF00CEE5DE /* Header.swift in Sources */,
+				769AA1F92CA541A200CEE5DE /* Router.swift in Sources */,
 				76A7C5992C9FFC1200ABB814 /* DateFormatterManager.swift in Sources */,
 				7691D5AD2C9BE5A000AE5C14 /* NoDamHaJangApp.swift in Sources */,
 				76A7C5A42CA006A900ABB814 /* HomeViewModel.swift in Sources */,
+				769AA2022CA543CA00CEE5DE /* News.swift in Sources */,
 				7623B0E72CA1541400CFD90B /* SmokingData.swift in Sources */,
+				769AA1FD2CA541FF00CEE5DE /* NetworkManager.swift in Sources */,
+				769AA1F42CA5417100CEE5DE /* TargetType.swift in Sources */,
+				769AA2062CA54A0A00CEE5DE /* String+.swift in Sources */,
+				769AA2042CA5474E00CEE5DE /* NewsItems.swift in Sources */,
+				769AA1FF2CA5431400CEE5DE /* APIKey.swift in Sources */,
 				76A7C59C2C9FFF7400ABB814 /* ViewModelType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -618,6 +674,14 @@
 				minimumVersion = 2.8.4;
 			};
 		};
+		769AA1F52CA5418800CEE5DE /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.1;
+			};
+		};
 		76A7C58E2C9FF9EA00ABB814 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-swift.git";
@@ -633,6 +697,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 760C7BB02C9D6C8C00CA78A6 /* XCRemoteSwiftPackageReference "FSCalendar" */;
 			productName = FSCalendar;
+		};
+		769AA1F62CA5418800CEE5DE /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 769AA1F52CA5418800CEE5DE /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
 		76A7C58F2C9FF9EA00ABB814 /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;

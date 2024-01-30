@@ -16,7 +16,6 @@ struct CustomWKWebView: UIViewRepresentable {
             return WKWebView()
         }
         let webView = WKWebView()
-
         webView.load(URLRequest(url: url))
 
         return webView
