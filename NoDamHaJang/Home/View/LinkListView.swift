@@ -10,52 +10,62 @@ import LinkPresentation
 
 struct LinkListView: View {
     @StateObject private var viewModel = LinkListViewModel()
-    @State var redrawPreview = false
 
     var body: some View {
-        List(viewModel.output.newItemList) { l in
-            VStack {
-                NavigationLink {
-                    CustomWKWebView(url: l.link)
-                } label: {
-                    LinkRow(previewURL: URL(string: l.link)!, redraw: self.$redrawPreview)
+        VStack {
+            List(viewModel.output.newItemList) { l in
+                VStack {
+                    NavigationLink {
+                        CustomWKWebView(url: l.link)
+                    } label: {
+                        URLPreviewRow(
+                            viewModel: PreviewViewModel(l.link))
+                    }
                 }
             }
-        }.environment(\.defaultMinListRowHeight, 50)
-            .task {
-                viewModel.action(.viewOnTask)
-            }
+        }
+        .task {
+            viewModel.action(.viewOnTask)
+        }
     }
 }
 
-struct LinkRow: UIViewRepresentable {
-    var previewURL: URL
-    @Binding var redraw: Bool
+struct URLPreviewRow: View {
+    @ObservedObject var viewModel: PreviewViewModel
 
-    func makeUIView(context: Context) -> LPLinkView {
-        let view = LPLinkView(url: previewURL)
+    var body: some View {
 
-        let provider = LPMetadataProvider()
-        provider.startFetchingMetadata(for: previewURL) { metadata, error in
-            if let md = metadata {
-                DispatchQueue.main.async {
-                    view.metadata = md
-                    view.sizeToFit()
-                    self.redraw.toggle()
-                }
-            } else if error != nil {
-                let md = LPLinkMetadata()
-                md.title = "Custom title"
-                view.metadata = md
-                view.sizeToFit()
-                self.redraw.toggle()
+        HStack(spacing: 15) {
+            if let image = viewModel.image {
+                Image(uiImage: image)
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(maxWidth: 90, maxHeight: 90)
+                    .clipped()
+                    .cornerRadius(16)
             }
+
+            VStack(alignment: .leading, spacing: 1, content: {
+                if let title = viewModel.title {
+                    Text(title)
+                        .font(.body)
+                        .foregroundColor(Constant.ColorType.purple)
+                        .multilineTextAlignment(.leading)
+                }
+
+                if let url = viewModel.url {
+                    Text(url)
+                        .font(.footnote)
+                        .foregroundColor(.gray)
+                        .multilineTextAlignment(.leading)
+                }
+            })
+            .padding(.vertical, 10)
+            .padding(.trailing, 20)
+            .frame(maxWidth: .infinity, alignment: .leading)
         }
-        return view
-    }
-
-    func updateUIView(_ uiView: LPLinkView, context: Context) {
-
+        .frame(maxWidth: .infinity)
+        .frame(height: 100, alignment: .leading)
     }
 }
 
