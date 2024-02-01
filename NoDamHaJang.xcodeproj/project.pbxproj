@@ -43,6 +43,10 @@
 		76A7C59C2C9FFF7400ABB814 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A7C59B2C9FFF7400ABB814 /* ViewModelType.swift */; };
 		76A7C59E2C9FFFAE00ABB814 /* GoalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A7C59D2C9FFFAE00ABB814 /* GoalViewModel.swift */; };
 		76A7C5A42CA006A900ABB814 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A7C5A32CA006A900ABB814 /* HomeViewModel.swift */; };
+		76FFC57B2CA7D15500A62447 /* FancyToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FFC57A2CA7D15500A62447 /* FancyToast.swift */; };
+		76FFC57D2CA7D18200A62447 /* FancyToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FFC57C2CA7D18200A62447 /* FancyToastView.swift */; };
+		76FFC57F2CA7D20C00A62447 /* FancyToastModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FFC57E2CA7D20C00A62447 /* FancyToastModifier.swift */; };
+		76FFC5812CA7D29500A62447 /* ToastBasicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FFC5802CA7D29500A62447 /* ToastBasicView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +85,10 @@
 		76A7C59B2C9FFF7400ABB814 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
 		76A7C59D2C9FFFAE00ABB814 /* GoalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalViewModel.swift; sourceTree = "<group>"; };
 		76A7C5A32CA006A900ABB814 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		76FFC57A2CA7D15500A62447 /* FancyToast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FancyToast.swift; sourceTree = "<group>"; };
+		76FFC57C2CA7D18200A62447 /* FancyToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FancyToastView.swift; sourceTree = "<group>"; };
+		76FFC57E2CA7D20C00A62447 /* FancyToastModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FancyToastModifier.swift; sourceTree = "<group>"; };
+		76FFC5802CA7D29500A62447 /* ToastBasicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastBasicView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,11 +213,12 @@
 		7691D5AB2C9BE5A000AE5C14 /* NoDamHaJang */ = {
 			isa = PBXGroup;
 			children = (
+				7691D5AC2C9BE5A000AE5C14 /* NoDamHaJangApp.swift */,
 				76A7C59A2C9FFF6500ABB814 /* Protocol */,
 				76A7C5912C9FF9F400ABB814 /* Util */,
+				76FFC5782CA7D11E00A62447 /* ViewModifier */,
 				760C7BA82C9D63CD00CA78A6 /* Helper */,
 				760C7BA52C9D636100CA78A6 /* Extension */,
-				7691D5AC2C9BE5A000AE5C14 /* NoDamHaJangApp.swift */,
 				760C7BA42C9D593200CA78A6 /* TabBar */,
 				760C7BA02C9D58FF00CA78A6 /* Home */,
 				760C7BA32C9D591900CA78A6 /* Calendar */,
@@ -314,6 +323,7 @@
 			isa = PBXGroup;
 			children = (
 				76A648FE2C9C0DED00C03092 /* GoalView.swift */,
+				76FFC5802CA7D29500A62447 /* ToastBasicView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -336,6 +346,24 @@
 				769AA1EE2CA53C2500CEE5DE /* CustomWKWebView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		76FFC5782CA7D11E00A62447 /* ViewModifier */ = {
+			isa = PBXGroup;
+			children = (
+				76FFC5792CA7D13300A62447 /* Toast */,
+			);
+			path = ViewModifier;
+			sourceTree = "<group>";
+		};
+		76FFC5792CA7D13300A62447 /* Toast */ = {
+			isa = PBXGroup;
+			children = (
+				76FFC57A2CA7D15500A62447 /* FancyToast.swift */,
+				76FFC57C2CA7D18200A62447 /* FancyToastView.swift */,
+				76FFC57E2CA7D20C00A62447 /* FancyToastModifier.swift */,
+			);
+			path = Toast;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -424,6 +452,9 @@
 				769AA1EF2CA53C2500CEE5DE /* CustomWKWebView.swift in Sources */,
 				769AA2082CA5508B00CEE5DE /* PreviewViewModel.swift in Sources */,
 				76A648FF2C9C0DED00C03092 /* GoalView.swift in Sources */,
+				76FFC57F2CA7D20C00A62447 /* FancyToastModifier.swift in Sources */,
+				76FFC57B2CA7D15500A62447 /* FancyToast.swift in Sources */,
+				76FFC57D2CA7D18200A62447 /* FancyToastView.swift in Sources */,
 				760C7BAA2C9D63DE00CA78A6 /* Constant.swift in Sources */,
 				769AA1ED2CA53B5400CEE5DE /* LinkListView.swift in Sources */,
 				760C7BB42C9D6DF100CA78A6 /* FSCalendarView.swift in Sources */,
@@ -439,6 +470,7 @@
 				769AA1FB2CA541EF00CEE5DE /* Header.swift in Sources */,
 				769AA1F92CA541A200CEE5DE /* Router.swift in Sources */,
 				76A7C5992C9FFC1200ABB814 /* DateFormatterManager.swift in Sources */,
+				76FFC5812CA7D29500A62447 /* ToastBasicView.swift in Sources */,
 				7691D5AD2C9BE5A000AE5C14 /* NoDamHaJangApp.swift in Sources */,
 				76A7C5A42CA006A900ABB814 /* HomeViewModel.swift in Sources */,
 				769AA2022CA543CA00CEE5DE /* News.swift in Sources */,

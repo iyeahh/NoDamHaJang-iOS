@@ -17,24 +17,10 @@ struct GoalView: View {
             setGoalView()
             pickerView()
             Spacer()
-            setGoalButtonView()
+            ToastBasicView(viewModel: viewModel, selectedNumber: selectedNumber)
         }
         .foregroundStyle(Constant.ColorType.purple)
         .background(Constant.ColorType.secondary.opacity(0.4))
-    }
-
-    func setGoalButtonView() -> some View {
-        Button {
-            viewModel.action(.setGoalButtonTapped(smokeCount: selectedNumber))
-        } label: {
-            RoundedRectangle(cornerRadius: 30)
-                .padding()
-                .frame(height: 80)
-                .overlay(alignment: Alignment(horizontal: .center, vertical: .center)) {
-                    Text("목표 설정")
-                        .foregroundStyle(.white)
-                }
-        }
     }
 
     func pickerView() -> some View {
