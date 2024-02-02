@@ -32,23 +32,21 @@ struct GraphView: View {
 
     func descriptionView() -> some View {
         VStack(spacing: 20) {
-            RoundedRectangle(cornerRadius: 30)
-                .frame(maxWidth: .infinity)
-                .frame(height: 50)
-                .foregroundStyle(Constant.ColorType.purple)
-                .overlay(alignment: Alignment(horizontal: .center, vertical: .center)) {
-                    Text("하루 평균 \(viewModel.output.averageSmokeCount)회 흡연")
-                }
-            RoundedRectangle(cornerRadius: 30)
-                .frame(maxWidth: .infinity)
-                .frame(height: 50)
-                .foregroundStyle(Constant.ColorType.purple)
-                .overlay(alignment: Alignment(horizontal: .center, vertical: .center)) {
-                    Text("평균 성공률 \(viewModel.output.averageSuccess)% 달성")
-                }
+            roundedRectangleView(text: "하루 평균 \(viewModel.output.averageSmokeCount)회 흡연")
+            roundedRectangleView(text: "평균 성공률 \(viewModel.output.averageSuccess)% 달성")
         }
         .foregroundStyle(.white)
         .padding(.horizontal, 20)
+    }
+
+    func roundedRectangleView(text: String) -> some View {
+        RoundedRectangle(cornerRadius: 30)
+            .frame(maxWidth: .infinity)
+            .frame(height: 50)
+            .foregroundStyle(Constant.ColorType.purple)
+            .overlay(alignment: Alignment(horizontal: .center, vertical: .center)) {
+                Text(text)
+            }
     }
 
     func chartView() -> some View {

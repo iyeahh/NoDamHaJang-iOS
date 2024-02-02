@@ -36,24 +36,13 @@ struct HomeView: View {
             smokeCountView()
             roundedRectangleView()
             Spacer()
-            smokeButtonView()
+            RoundedButton(
+                action: { viewModel.action(.addSmokeButtonTapped) },
+                text: "흡연했어요 🚬"
+            )
         }
         .foregroundStyle(Constant.ColorType.purple)
         .background(Constant.ColorType.secondary.opacity(0.4))
-    }
-
-    func smokeButtonView() -> some View {
-        Button {
-            viewModel.action(.addSmokeButtonTapped)
-        } label: {
-            RoundedRectangle(cornerRadius: 30)
-                .padding()
-                .frame(height: 80)
-                .overlay(alignment: Alignment(horizontal: .center, vertical: .center)) {
-                    Text("흡연했어요 🚬")
-                        .foregroundStyle(.white)
-                }
-        }
     }
 
     func roundedRectangleView() -> some View {

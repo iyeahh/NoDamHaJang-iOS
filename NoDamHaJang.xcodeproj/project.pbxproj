@@ -47,6 +47,7 @@
 		76FFC57D2CA7D18200A62447 /* FancyToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FFC57C2CA7D18200A62447 /* FancyToastView.swift */; };
 		76FFC57F2CA7D20C00A62447 /* FancyToastModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FFC57E2CA7D20C00A62447 /* FancyToastModifier.swift */; };
 		76FFC5812CA7D29500A62447 /* ToastBasicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FFC5802CA7D29500A62447 /* ToastBasicView.swift */; };
+		76FFC5842CA7D5CA00A62447 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FFC5832CA7D5CA00A62447 /* RoundedButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -89,6 +90,7 @@
 		76FFC57C2CA7D18200A62447 /* FancyToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FancyToastView.swift; sourceTree = "<group>"; };
 		76FFC57E2CA7D20C00A62447 /* FancyToastModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FancyToastModifier.swift; sourceTree = "<group>"; };
 		76FFC5802CA7D29500A62447 /* ToastBasicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastBasicView.swift; sourceTree = "<group>"; };
+		76FFC5832CA7D5CA00A62447 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -342,6 +344,7 @@
 			isa = PBXGroup;
 			children = (
 				76A648F82C9C0BE200C03092 /* HomeView.swift */,
+				76FFC5832CA7D5CA00A62447 /* RoundedButton.swift */,
 				769AA1EC2CA53B5400CEE5DE /* LinkListView.swift */,
 				769AA1EE2CA53C2500CEE5DE /* CustomWKWebView.swift */,
 			);
@@ -458,6 +461,7 @@
 				760C7BAA2C9D63DE00CA78A6 /* Constant.swift in Sources */,
 				769AA1ED2CA53B5400CEE5DE /* LinkListView.swift in Sources */,
 				760C7BB42C9D6DF100CA78A6 /* FSCalendarView.swift in Sources */,
+				76FFC5842CA7D5CA00A62447 /* RoundedButton.swift in Sources */,
 				76A7C5932C9FFA2800ABB814 /* SmokingTable.swift in Sources */,
 				76A648F92C9C0BE200C03092 /* HomeView.swift in Sources */,
 				76A7C59E2C9FFFAE00ABB814 /* GoalViewModel.swift in Sources */,
