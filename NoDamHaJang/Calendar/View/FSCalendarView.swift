@@ -31,6 +31,8 @@ struct FSCalendarView: UIViewRepresentable {
         func calendar(_ calendar: FSCalendar, cellFor date: Date, at position: FSCalendarMonthPosition) -> FSCalendarCell {
             let cell = calendar.dequeueReusableCell(withIdentifier: "CustomCalendarCell", for: date, at: position) as! CustomCalendarCell
 
+            cell.smokeCountLabel.text = ""
+
             let formatter = DateFormatter()
             formatter.dateFormat = "yyyyMMdd"
             let dateString = formatter.string(from: date)
