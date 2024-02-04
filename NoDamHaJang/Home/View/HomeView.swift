@@ -52,7 +52,7 @@ struct HomeView: View {
             .frame(height: UIScreen.main.bounds.width + 20)
             .foregroundStyle(Constant.ColorType.primary.opacity(0.5))
             .overlay(alignment: Alignment(horizontal: .center, vertical: .center), content: {
-                RoundProgressView(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.width + 20, color1: Constant.ColorType.purple, color2: Constant.ColorType.secondary, percent: viewModel.output.smokingData.progress)
+                RoundProgressView(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.width + 20, color1: viewModel.output.smokingData.progress > 100 ? Constant.ColorType.red : Constant.ColorType.purple, color2: viewModel.output.smokingData.progress > 100 ? Constant.ColorType.ivory : Constant.ColorType.secondary, percent: viewModel.output.smokingData.progress)
                     .padding(.top, 50)
             })
             .overlay(alignment: Alignment(horizontal: .leading, vertical: .top)) {
@@ -75,7 +75,8 @@ struct HomeView: View {
                 .padding(.leading, 20)
             HStack(spacing: 20) {
                 Text("목표: \(viewModel.output.smokingData.goalCount)번")
-                Text("남은 횟수: \(viewModel.output.smokingData.remaningCount)번")
+                Text(viewModel.output.smokingData.remaningCount < 0 ? "초과 횟수: \(abs(viewModel.output.smokingData.remaningCount))번" : "남은 횟수: \(viewModel.output.smokingData.remaningCount)번")
+                    .foregroundStyle(viewModel.output.smokingData.remaningCount < 0 ? Constant.ColorType.red : Constant.ColorType.purple)
             }
             .font(.title3)
             .frame(maxWidth: .infinity, alignment: .leading)
@@ -115,9 +116,10 @@ struct RoundProgressView : View {
             .rotationEffect(Angle(degrees: 90))
             .rotation3DEffect(Angle(degrees: 180), axis: (x: 1, y: 0, z: 0))
             .shadow(color: color2, radius: 14 * multiplier, x: 0.0, y: 14 * multiplier)
-            Text("\(Int(percent))%")
+            Text("\(percent)%")
                 .font(.system(size : 14 * multiplier / 4))
                 .fontWeight(.bold)
+                .foregroundStyle(percent > 100 ? Constant.ColorType.red : Constant.ColorType.purple)
         }
     }
 }
