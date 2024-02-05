@@ -26,7 +26,7 @@ extension CalendarViewModel {
     }
 
     struct Output { 
-        var smokingData: SmokingData = SmokingData(date: "", goalCount: 0, smokeCount: 0)
+        var smokingData: SmokingData = SmokingData(date: DateFormatterManager.shared.dateFormat(), goalCount: SmokingTableRepository.shared.fetchGoalCount(), smokeCount: SmokingTableRepository.shared.fetchSmokeCount())
     }
 
     func transform() {
