@@ -26,7 +26,7 @@ struct GoalView: View {
     func pickerView() -> some View {
         VStack {
             Picker("횟수를 정해주세요", selection: $selectedNumber) {
-                ForEach(0..<60, id: \.self) {
+                ForEach(0..<81, id: \.self) {
                     Text("\($0)")
                 }
             }

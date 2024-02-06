@@ -28,6 +28,7 @@ struct HomeView: View {
         }
         .task {
             viewModel.action(.viewOnTask)
+            LocalNotificationHelper.shared.pushNotification()
         }
     }
 
