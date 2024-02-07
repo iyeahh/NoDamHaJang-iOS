@@ -23,53 +23,70 @@ final class PreviewViewModel: ObservableObject {
     }
 
     private func fetchMetadata() {
-        guard let previewURL else { return }
+        guard let previewURL else {
+            print("Invalid preview URL.")
+            return
+        }
+
         let provider = LPMetadataProvider()
 
         Task {
             do {
                 let metadata = try await provider.startFetchingMetadata(for: previewURL)
 
-                let fetchedImage = try await convertToImage(metadata.imageProvider)
+                if let imageProvider = metadata.imageProvider {
+                    let fetchedImage = try await convertToImage(imageProvider)
+                    await MainActor.run {
+                        image = fetchedImage
+                    }
+                } else {
+                    print("No image provider available.")
+                }
 
                 await MainActor.run {
-                    image = fetchedImage
-                    title = metadata.title
-                    url = metadata.url?.host()
+                    title = metadata.title ?? "No title"
+                    url = metadata.url?.host() ?? "No URL"
                 }
             } catch {
-                print("Failed to fetch metadata: \(error)")
+                print("Failed to fetch metadata: \(error.localizedDescription)")
+                await MainActor.run {
+                    image = nil
+                    title = "데이터가 원활하지 않습니다."
+                    url = nil
+                }
             }
         }
     }
 
     private func convertToImage(_ imageProvider: NSItemProvider?) async throws -> UIImage? {
-        var image: UIImage?
+        guard let imageProvider = imageProvider else {
+            print("No image provider available.")
+            return nil
+        }
 
-        if let imageProvider {
-            let type = String(describing: UTType.image)
+        let type = String(describing: UTType.image)
 
-            if imageProvider.hasItemConformingToTypeIdentifier(type) {
+        if imageProvider.hasItemConformingToTypeIdentifier(type) {
+            do {
                 let item = try await imageProvider.loadItem(forTypeIdentifier: type)
 
-                if item is UIImage {
-                    image = item as? UIImage
+                if let uiImage = item as? UIImage {
+                    return uiImage
+                } else if let url = item as? URL {
+                    if let data = try? Data(contentsOf: url) {
+                        return UIImage(data: data)
+                    }
+                } else if let data = item as? Data {
+                    return UIImage(data: data)
+                } else {
+                    print("Item is neither UIImage, URL, nor Data.")
                 }
-
-                if item is URL {
-                    guard let url = item as? URL,
-                          let data = try? Data(contentsOf: url) else { return nil }
-
-                    image = UIImage(data: data)
-                }
-
-                if item is Data {
-                    guard let data = item as? Data else { return nil }
-
-                    image = UIImage(data: data)
-                }
+            } catch {
+                print("Failed to convert image: \(error.localizedDescription)")
             }
+        } else {
+            print("Item does not conform to image type identifier.")
         }
-        return image
+        return nil
     }
 }

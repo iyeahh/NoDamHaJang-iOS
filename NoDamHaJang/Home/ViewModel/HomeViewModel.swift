@@ -11,6 +11,7 @@ import RealmSwift
 
 final class HomeViewModel: ViewModelType {
     var cancellables = Set<AnyCancellable>()
+    var index = 1
 
     var input = Input()
     @Published var output = Output()

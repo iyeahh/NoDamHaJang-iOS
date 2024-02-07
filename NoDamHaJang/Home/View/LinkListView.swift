@@ -13,17 +13,24 @@ struct LinkListView: View {
 
     var body: some View {
         VStack {
-            List(viewModel.output.newItemList) { l in
+            List(viewModel.output.newsItemList) { newsItem in
                 VStack {
                     NavigationLink {
-                        CustomWKWebView(url: l.link)
+                        CustomWKWebView(url: newsItem.originallink)
                     } label: {
                         URLPreviewRow(
-                            viewModel: PreviewViewModel(l.link))
+                            viewModel: PreviewViewModel(newsItem.originallink))
                     }
                 }
+                .onAppear {
+                    if newsItem == viewModel.output.newsItemList.last {
+                        viewModel.action(.lastIndex)
+                    }
+                }
+                .listRowSeparator(.hidden)
             }
         }
+        .navigationBarTitleDisplayMode(.inline)
         .task {
             viewModel.action(.viewOnTask)
         }

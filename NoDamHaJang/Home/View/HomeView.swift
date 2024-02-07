@@ -19,7 +19,7 @@ struct HomeView: View {
             homeView()
                 .toolbar {
                     ToolbarItemGroup(placement: .topBarTrailing) {
-                        NavigationLink("금연 기사 보기") {
+                        NavigationLink("금연 소식") {
                             LinkListView()
                         }
                     }

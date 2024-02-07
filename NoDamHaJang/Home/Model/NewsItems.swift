@@ -7,15 +7,11 @@
 
 import Foundation
 
-struct NewsItems: Identifiable {
+struct NewsItems: Identifiable, Equatable {
     let id = UUID()    
     let title: String
     let originallink: String
     let description: String
     let pubDate: String
-
-    var link: String {
-        originallink.removeSlash()
-    }
 }
 
