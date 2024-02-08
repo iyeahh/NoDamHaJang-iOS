@@ -43,6 +43,8 @@
 		76A7C5A42CA006A900ABB814 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A7C5A32CA006A900ABB814 /* HomeViewModel.swift */; };
 		76F700BC2CA819660066E5A8 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 76F700BB2CA819660066E5A8 /* RealmSwift */; };
 		76F700BD2CA8196D0066E5A8 /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 76F700BB2CA819660066E5A8 /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		76F700BF2CA820AF0066E5A8 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 76F700BE2CA820AF0066E5A8 /* Localizable.xcstrings */; };
+		76F700C12CA8216F0066E5A8 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F700C02CA8216F0066E5A8 /* String+.swift */; };
 		76FFC57B2CA7D15500A62447 /* FancyToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FFC57A2CA7D15500A62447 /* FancyToast.swift */; };
 		76FFC57D2CA7D18200A62447 /* FancyToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FFC57C2CA7D18200A62447 /* FancyToastView.swift */; };
 		76FFC57F2CA7D20C00A62447 /* FancyToastModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FFC57E2CA7D20C00A62447 /* FancyToastModifier.swift */; };
@@ -100,6 +102,8 @@
 		76A7C59B2C9FFF7400ABB814 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
 		76A7C59D2C9FFFAE00ABB814 /* GoalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalViewModel.swift; sourceTree = "<group>"; };
 		76A7C5A32CA006A900ABB814 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		76F700BE2CA820AF0066E5A8 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		76F700C02CA8216F0066E5A8 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		76FFC57A2CA7D15500A62447 /* FancyToast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FancyToast.swift; sourceTree = "<group>"; };
 		76FFC57C2CA7D18200A62447 /* FancyToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FancyToastView.swift; sourceTree = "<group>"; };
 		76FFC57E2CA7D20C00A62447 /* FancyToastModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FancyToastModifier.swift; sourceTree = "<group>"; };
@@ -172,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				760C7BA62C9D63A000CA78A6 /* Color+.swift */,
+				76F700C02CA8216F0066E5A8 /* String+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -243,6 +248,7 @@
 				76A648F52C9C020900C03092 /* Info.plist */,
 				7691D5B02C9BE5A100AE5C14 /* Assets.xcassets */,
 				7691D5B22C9BE5A100AE5C14 /* Preview Content */,
+				76F700BE2CA820AF0066E5A8 /* Localizable.xcstrings */,
 			);
 			path = NoDamHaJang;
 			sourceTree = "<group>";
@@ -440,6 +446,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ko,
 			);
 			mainGroup = 7691D5A02C9BE5A000AE5C14;
 			packageReferences = (
@@ -463,6 +470,7 @@
 			files = (
 				7691D5B42C9BE5A100AE5C14 /* Preview Assets.xcassets in Resources */,
 				7691D5BB2C9BE5CF00AE5C14 /* .gitignore in Resources */,
+				76F700BF2CA820AF0066E5A8 /* Localizable.xcstrings in Resources */,
 				7691D5B12C9BE5A100AE5C14 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -484,6 +492,7 @@
 				76FFC57D2CA7D18200A62447 /* FancyToastView.swift in Sources */,
 				760C7BAA2C9D63DE00CA78A6 /* Constant.swift in Sources */,
 				769AA1ED2CA53B5400CEE5DE /* LinkListView.swift in Sources */,
+				76F700C12CA8216F0066E5A8 /* String+.swift in Sources */,
 				760C7BB42C9D6DF100CA78A6 /* FSCalendarView.swift in Sources */,
 				76FFC5842CA7D5CA00A62447 /* RoundedButton.swift in Sources */,
 				76A7C5932C9FFA2800ABB814 /* SmokingTable.swift in Sources */,

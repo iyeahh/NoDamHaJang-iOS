@@ -24,7 +24,7 @@ struct HomeView: View {
                         }
                     }
                 }
-            .navigationTitle("노담러의 하루")
+                .navigationTitle("노담러의 하루")
         }
         .task {
             viewModel.action(.viewOnTask)
@@ -39,7 +39,7 @@ struct HomeView: View {
             Spacer()
             RoundedButton(
                 action: { viewModel.action(.addSmokeButtonTapped) },
-                text: "흡연했어요 🚬"
+                text: "흡연했어요 🚬".localized
             )
         }
         .foregroundStyle(Constant.ColorType.purple)

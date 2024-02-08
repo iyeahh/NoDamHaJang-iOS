@@ -32,8 +32,8 @@ struct GraphView: View {
 
     func descriptionView() -> some View {
         VStack(spacing: 20) {
-            roundedRectangleView(text: "하루 평균 \(viewModel.output.averageSmokeCount)회 흡연")
-            roundedRectangleView(text: "평균 성공률 \(viewModel.output.averageSuccess)% 달성")
+            roundedRectangleView(text: "하루 평균 \(viewModel.output.averageSmokeCount)회 흡연".localized)
+            roundedRectangleView(text: "평균 성공률 \(viewModel.output.averageSuccess)% 달성".localized)
         }
         .foregroundStyle(.white)
         .padding(.horizontal, 20)

@@ -16,8 +16,8 @@ struct ToastBasicView: View {
         VStack {
             RoundedButton(
                 action: {viewModel.action(.setGoalButtonTapped(smokeCount: selectedNumber))
-                    toast = FancyToast(title: "목표 설정", message: "목표 설정이 완료되었어요!")
-                }, text: "목표 설정"
+                    toast = FancyToast(title: "목표 설정".localized, message: "목표 설정이 완료되었어요!".localized)
+                }, text: "목표 설정".localized
             )
         }
         .toastView(toast: $toast)
