@@ -21,8 +21,8 @@ class LocalNotificationHelper {
         var dateComponents = DateComponents()
         dateComponents.calendar = Calendar.current
 
-        dateComponents.hour = 16
-        dateComponents.minute = 36
+        dateComponents.hour = 7
+        dateComponents.minute = 0
 
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
         let uuidString = UUID().uuidString
