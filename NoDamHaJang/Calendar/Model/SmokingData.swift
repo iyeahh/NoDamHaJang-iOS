@@ -30,7 +30,7 @@ struct SmokingData {
     }
 
     var isSuccess: String {
-        goalCount >= smokeCount ? "성공".localized : "실패".localized
+        goalCount <= smokeCount ? "성공".localized : "실패".localized
     }
 
     var color: Color {
