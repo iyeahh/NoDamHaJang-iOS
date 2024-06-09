@@ -19,7 +19,7 @@ struct LinkListView: View {
                         CustomWKWebView(url: newsItem.originallink)
                     } label: {
                         URLPreviewRow(
-                            viewModel: PreviewViewModel(newsItem.originallink))
+                            viewModel: PreviewViewModel(newsItem.originallink), newsItem: newsItem)
                     }
                 }
                 .onAppear {
@@ -27,7 +27,7 @@ struct LinkListView: View {
                         viewModel.action(.lastIndex)
                     }
                 }
-                .listRowSeparator(.hidden)
+                .listRowSeparator(.visible)
             }
         }
         .toastView(toast: $viewModel.output.toast)
@@ -40,6 +40,7 @@ struct LinkListView: View {
 
 struct URLPreviewRow: View {
     @ObservedObject var viewModel: PreviewViewModel
+    var newsItem: NewsItems
 
     var body: some View {
 
@@ -54,19 +55,15 @@ struct URLPreviewRow: View {
             }
 
             VStack(alignment: .leading, spacing: 1, content: {
-                if let title = viewModel.title {
-                    Text(title)
-                        .font(.body)
-                        .foregroundColor(Constant.ColorType.purple)
-                        .multilineTextAlignment(.leading)
-                }
-
-                if let url = viewModel.url {
-                    Text(url)
-                        .font(.footnote)
-                        .foregroundColor(.gray)
-                        .multilineTextAlignment(.leading)
-                }
+                Text(newsItem.title.removedString)
+                    .font(.footnote)
+                    .bold()
+                    .foregroundStyle(Constant.ColorType.purple)
+                Text(newsItem.removedString)
+                    .font(.footnote)
+                Text(newsItem.formattedDate)
+                    .font(.footnote)
+                    .foregroundStyle(.gray)
             })
             .padding(.vertical, 10)
             .padding(.trailing, 20)

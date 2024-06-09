@@ -12,7 +12,6 @@ import UniformTypeIdentifiers
 final class PreviewViewModel: ObservableObject {
 
     @Published var image: UIImage?
-    @Published var title: String?
     @Published var url: String?
 
     let previewURL: URL?
@@ -42,16 +41,10 @@ final class PreviewViewModel: ObservableObject {
                 } else {
                     print("No image provider available.")
                 }
-
-                await MainActor.run {
-                    title = metadata.title ?? "No title"
-                    url = metadata.url?.host() ?? "No URL"
-                }
             } catch {
                 print("Failed to fetch metadata: \(error.localizedDescription)")
                 await MainActor.run {
                     image = nil
-                    title = "데이터가 원활하지 않습니다."
                     url = nil
                 }
             }

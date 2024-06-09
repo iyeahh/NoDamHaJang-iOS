@@ -11,4 +11,9 @@ extension String {
     var localized: String {
         return NSLocalizedString(self, comment: "")
     }
+
+    var removedString: String {
+        let filteredString = self.replacingOccurrences(of: "</b>", with: "")
+        return filteredString.replacingOccurrences(of: "<b>", with: "")
+    }
 }

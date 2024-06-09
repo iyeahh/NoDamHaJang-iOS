@@ -13,5 +13,13 @@ struct NewsItems: Identifiable, Equatable {
     let originallink: String
     let description: String
     let pubDate: String
+
+    var formattedDate: String {
+        DateFormatterManager.shared.newsDate(date: pubDate)
+    }
+
+    var removedString: String {
+        description.removedString
+    }
 }
 
