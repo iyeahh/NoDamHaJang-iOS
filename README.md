@@ -88,7 +88,6 @@ viewModel.action(.addSmokeButtonTapped)
 
 - **LPMetadataProvider**를 통해 URL의 메타데이터(이미지, 제목 등)를 비동기적으로 가져오고, 이를 **LPLinkView**로 시각화하여 링크의 미리보기를 제공
 - 금연 관련 기사의 이미지와 제목을 사용자가 직관적으로 확인할 수 있음
-<img width="307" alt="스크린샷 2024-10-01 오후 1 49 25" src="https://github.com/user-attachments/assets/4ff8848d-83e9-4391-8221-674ce7fd4f90">
 
   
 ### **❓ 토픽**
