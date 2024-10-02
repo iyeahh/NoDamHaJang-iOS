@@ -13,26 +13,24 @@ struct CalendarView: View {
 
     init() {
         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor(Constant.ColorType.accent)]
-   }
-    
+    }
+
     var body: some View {
         NavigationStack {
             calendarView()
-            Spacer()
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(Constant.ColorType.secondary.opacity(0.4))
-            .navigationTitle("노담러의 캘린더")
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .background(Constant.ColorType.secondary.opacity(0.4))
+                .navigationTitle("노담러의 캘린더")
         }
     }
 
     func calendarView() -> some View {
         VStack {
             FSCalendarView(viewModel: viewModel)
-                .frame(height: 500)
+                .frame(height: UIScreen.main.bounds.height - 300)
             descriptionView()
         }
         .padding(.top, 20)
-        .background(Constant.ColorType.secondary.opacity(0.4))
     }
 
     func descriptionView() -> some View {
@@ -43,7 +41,7 @@ struct CalendarView: View {
                 .foregroundStyle(Constant.ColorType.purple)
             Spacer()
             Text("\(viewModel.output.smokingData.isSuccess)")
-                .foregroundStyle(viewModel.output.smokingData.color)
+                .foregroundStyle(viewModel.output.smokingData.stringColor)
         }
         .padding()
     }

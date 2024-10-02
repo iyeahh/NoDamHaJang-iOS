@@ -17,17 +17,22 @@ struct GraphView: View {
 
     var body: some View {
         NavigationStack {
-            VStack {
-                chartView()
-                descriptionView()
-                Spacer()
-            }
-                .background(Constant.ColorType.secondary.opacity(0.4))
+            GraphView()
                 .navigationTitle("흡연 횟수 추이")
+                .background(Constant.ColorType.secondary.opacity(0.4))
         }
         .task {
             viewModel.action(.viewOnTask)
         }
+    }
+
+    func GraphView() -> some View {
+        VStack {
+            chartView()
+            descriptionView()
+            Spacer()
+        }
+        .padding()
     }
 
     func descriptionView() -> some View {
@@ -41,7 +46,7 @@ struct GraphView: View {
 
     func roundedRectangleView(text: String) -> some View {
         RoundedRectangle(cornerRadius: 30)
-            .frame(maxWidth: .infinity)
+            .frame(width: UIScreen.main.bounds.width - 60)
             .frame(height: 50)
             .foregroundStyle(Constant.ColorType.purple)
             .overlay(alignment: Alignment(horizontal: .center, vertical: .center)) {
@@ -51,9 +56,9 @@ struct GraphView: View {
 
     func chartView() -> some View {
         RoundedRectangle(cornerRadius: 30)
-            .frame(maxWidth: .infinity)
+            .frame(width: UIScreen.main.bounds.width - 60)
             .padding()
-            .frame(height: UIScreen.main.bounds.width + 20)
+            .frame(height: UIScreen.main.bounds.width - 60)
             .foregroundStyle(Constant.ColorType.primary.opacity(0.5))
             .overlay {
                 Chart(viewModel.output.smokingDataList, id: \.date) { element in

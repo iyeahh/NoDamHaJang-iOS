@@ -33,7 +33,7 @@ struct SmokingData {
         goalCount <= smokeCount ? "성공".localized : "실패".localized
     }
 
-    var color: Color {
+    var stringColor: Color {
         goalCount >= smokeCount ? .blue : .red
     }
 }

@@ -48,9 +48,9 @@ struct HomeView: View {
 
     func roundedRectangleView() -> some View {
         RoundedRectangle(cornerRadius: 30)
-            .frame(maxWidth: .infinity)
+            .frame(width: UIScreen.main.bounds.width - 60)
             .padding()
-            .frame(height: UIScreen.main.bounds.width + 20)
+            .frame(height: UIScreen.main.bounds.width - 40)
             .foregroundStyle(Constant.ColorType.primary.opacity(0.5))
             .overlay(alignment: Alignment(horizontal: .center, vertical: .center), content: {
                 RoundProgressView(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.width + 20, color1: viewModel.output.smokingData.progress > 100 ? Constant.ColorType.red : Constant.ColorType.purple, color2: viewModel.output.smokingData.progress > 100 ? Constant.ColorType.ivory : Constant.ColorType.secondary, percent: viewModel.output.smokingData.progress)
@@ -73,7 +73,7 @@ struct HomeView: View {
                 .font(.title)
                 .bold()
                 .frame(maxWidth: .infinity, alignment: .leading)
-                .padding(.leading, 20)
+                .padding(.leading, 30)
             HStack(spacing: 20) {
                 Text("목표: \(viewModel.output.smokingData.goalCount)번")
                 Text(viewModel.output.smokingData.remaningCount < 0 ? "초과 횟수: \(abs(viewModel.output.smokingData.remaningCount))번" : "남은 횟수: \(viewModel.output.smokingData.remaningCount)번")
@@ -81,9 +81,8 @@ struct HomeView: View {
             }
             .font(.title3)
             .frame(maxWidth: .infinity, alignment: .leading)
-            .padding(.leading, 20)
+            .padding(.leading, 30)
         }
-        .padding(.top, 20)
     }
 }
 

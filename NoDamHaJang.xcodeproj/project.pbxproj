@@ -25,11 +25,11 @@
 		769AA1F92CA541A200CEE5DE /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769AA1F82CA541A200CEE5DE /* Router.swift */; };
 		769AA1FB2CA541EF00CEE5DE /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769AA1FA2CA541EF00CEE5DE /* Header.swift */; };
 		769AA1FD2CA541FF00CEE5DE /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769AA1FC2CA541FF00CEE5DE /* NetworkManager.swift */; };
-		769AA1FF2CA5431400CEE5DE /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769AA1FE2CA5431400CEE5DE /* APIKey.swift */; };
 		769AA2022CA543CA00CEE5DE /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769AA2012CA543CA00CEE5DE /* News.swift */; };
 		769AA2042CA5474E00CEE5DE /* NewsItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769AA2032CA5474E00CEE5DE /* NewsItems.swift */; };
 		769AA2082CA5508B00CEE5DE /* PreviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769AA2072CA5508B00CEE5DE /* PreviewViewModel.swift */; };
 		769B58EA2CA3E7FE00FB5503 /* GraphViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769B58E92CA3E7FE00FB5503 /* GraphViewModel.swift */; };
+		769BC11F2CAD210400DA5583 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769BC11E2CAD210400DA5583 /* APIKey.swift */; };
 		76A648F72C9C0B2F00C03092 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A648F62C9C0B2F00C03092 /* TabBarView.swift */; };
 		76A648F92C9C0BE200C03092 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A648F82C9C0BE200C03092 /* HomeView.swift */; };
 		76A648FB2C9C0C0500C03092 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A648FA2C9C0C0500C03092 /* CalendarView.swift */; };
@@ -85,11 +85,11 @@
 		769AA1F82CA541A200CEE5DE /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		769AA1FA2CA541EF00CEE5DE /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 		769AA1FC2CA541FF00CEE5DE /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		769AA1FE2CA5431400CEE5DE /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		769AA2012CA543CA00CEE5DE /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 		769AA2032CA5474E00CEE5DE /* NewsItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsItems.swift; sourceTree = "<group>"; };
 		769AA2072CA5508B00CEE5DE /* PreviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewViewModel.swift; sourceTree = "<group>"; };
 		769B58E92CA3E7FE00FB5503 /* GraphViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphViewModel.swift; sourceTree = "<group>"; };
+		769BC11E2CAD210400DA5583 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		76A648F52C9C020900C03092 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		76A648F62C9C0B2F00C03092 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		76A648F82C9C0BE200C03092 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -264,11 +264,11 @@
 		769AA1F22CA5412B00CEE5DE /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				769AA1FE2CA5431400CEE5DE /* APIKey.swift */,
 				769AA1F32CA5417100CEE5DE /* TargetType.swift */,
 				769AA1F82CA541A200CEE5DE /* Router.swift */,
 				769AA1FA2CA541EF00CEE5DE /* Header.swift */,
 				769AA1FC2CA541FF00CEE5DE /* NetworkManager.swift */,
+				769BC11E2CAD210400DA5583 /* APIKey.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -516,7 +516,7 @@
 				76FFC58C2CA7E70400A62447 /* LocalNotificationHelper.swift in Sources */,
 				769AA1F42CA5417100CEE5DE /* TargetType.swift in Sources */,
 				769AA2042CA5474E00CEE5DE /* NewsItems.swift in Sources */,
-				769AA1FF2CA5431400CEE5DE /* APIKey.swift in Sources */,
+				769BC11F2CAD210400DA5583 /* APIKey.swift in Sources */,
 				76A7C59C2C9FFF7400ABB814 /* ViewModelType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

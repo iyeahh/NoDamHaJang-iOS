@@ -33,7 +33,7 @@ struct GoalView: View {
             .pickerStyle(.wheel)
             .background(Constant.ColorType.primary.opacity(0.5))
             .cornerRadius(15)
-            .padding()
+            .frame(width: UIScreen.main.bounds.width - 60)
 
             Text("한달이면 \((selectedNumber * 250 * 30).formatted())원을 절약할 수 있어요!")
         }

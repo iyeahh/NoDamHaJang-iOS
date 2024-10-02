@@ -16,12 +16,12 @@ struct RoundedButton: View {
         Button(action: action,
                label: {
             RoundedRectangle(cornerRadius: 30)
-                .padding()
-                .frame(height: 80)
+                .padding(EdgeInsets(top: 0, leading: 30, bottom: 0, trailing: 30))
                 .overlay(alignment: Alignment(horizontal: .center, vertical: .center)) {
                     Text(text)
                         .foregroundStyle(.white)
                 }
+                .frame(height: 50)
         }
         )
     }
