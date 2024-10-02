@@ -43,7 +43,7 @@ extension LinkListViewModel {
                         output.newsItemList = success.items.map({ newsItem in
                             NewsItems(title: newsItem.title ?? "타이틀 없음", originallink: newsItem.originallink ?? "링크 없음", description: newsItem.description ?? "설명 없음", pubDate: newsItem.pubDate ?? "날짜 없음")
                         })
-                        index += 10
+                        index += 20
                     case .failure:
                         print("네크워킹 에러")
                     }
@@ -63,7 +63,7 @@ extension LinkListViewModel {
                             NewsItems(title: newsItem.title ?? "타이틀 없음", originallink: newsItem.originallink ?? "링크 없음", description: newsItem.description ?? "설명 없음", pubDate: newsItem.pubDate ?? "날짜 없음")
                         })
                         output.newsItemList.append(contentsOf: array)
-                        index += 10
+                        index += 20
                     case .failure:
                         print("네크워킹 에러")
                     }

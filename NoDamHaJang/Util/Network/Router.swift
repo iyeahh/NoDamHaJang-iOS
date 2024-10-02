@@ -27,7 +27,8 @@ extension Router: TargetType {
     var queryItems: [URLQueryItem]? {
         switch self {
         case .fetchNews(let index):
-            return [URLQueryItem(name: "query", value: "금연"),
+            return [URLQueryItem(name: "display", value: "20"),
+                    URLQueryItem(name: "query", value: "금연"),
                     URLQueryItem(name: "start", value: "\(index)")]
         }
     }
