@@ -21,6 +21,7 @@ struct NoDamHaJangApp: App {
 class AppDelegate: NSObject, UIApplicationDelegate {
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        NetworkMonitor.shared.startMonitoring()
 
         UNUserNotificationCenter.current().delegate = self
 
@@ -36,5 +37,11 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 extension AppDelegate: UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         completionHandler([.list, .banner])
+    }
+}
+
+class SceneDelegate: UIResponder, UIWindowSceneDelegate {
+    func sceneDidDisconnect(_ scene: UIScene) {
+        NetworkMonitor.shared.stopMonitoring()
     }
 }

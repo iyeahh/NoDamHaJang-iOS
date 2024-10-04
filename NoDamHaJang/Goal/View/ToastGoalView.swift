@@ -1,5 +1,5 @@
 //
-//  ToastBasicView.swift
+//  ToastGoalView.swift
 //  NoDamHaJang
 //
 //  Created by Bora Yang on 9/28/24.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ToastBasicView: View {
+struct ToastGoalView: View {
     @State private var toast: FancyToast? = nil
     let viewModel: GoalViewModel
     let selectedNumber: Int

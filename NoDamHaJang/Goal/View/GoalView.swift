@@ -17,7 +17,7 @@ struct GoalView: View {
             setGoalView()
             pickerView()
             Spacer()
-            ToastBasicView(viewModel: viewModel, selectedNumber: selectedNumber)
+            ToastGoalView(viewModel: viewModel, selectedNumber: selectedNumber)
         }
         .foregroundStyle(Constant.ColorType.purple)
         .background(Constant.ColorType.secondary.opacity(0.4))

@@ -28,6 +28,7 @@ extension LinkListViewModel {
 
     struct Output {
         var newsItemList: [NewsItems] = []
+        var toast: FancyToast? = nil
     }
 
     func transform() {
@@ -44,8 +45,14 @@ extension LinkListViewModel {
                             NewsItems(title: newsItem.title ?? "타이틀 없음", originallink: newsItem.originallink ?? "링크 없음", description: newsItem.description ?? "설명 없음", pubDate: newsItem.pubDate ?? "날짜 없음")
                         })
                         index += 20
-                    case .failure:
-                        print("네크워킹 에러")
+                    case .failure(let failure):
+                        switch failure {
+                        case .unstableStatus:
+                            output.toast = FancyToast(title: "네트워크 연결 상태 확인", message: "네트워크 연결이 원활하지 않습니다. 다시 시도해 주세요.")                        case .invaildURL:
+                            print("유효하지 않은 URL")
+                        case .unknownResponse:
+                            print("응답값 오류")
+                        }
                     }
                 }
             }
@@ -64,8 +71,15 @@ extension LinkListViewModel {
                         })
                         output.newsItemList.append(contentsOf: array)
                         index += 20
-                    case .failure:
-                        print("네크워킹 에러")
+                    case .failure(let failure):
+                        switch failure {
+                        case .unstableStatus:
+                            output.toast = FancyToast(title: "네트워크 연결 상태 확인", message: "네트워크 연결이 원활하지 않습니다. 다시 시도해 주세요.")
+                        case .invaildURL:
+                            print("유효하지 않은 URL")
+                        case .unknownResponse:
+                            print("응답값 오류")
+                        }
                     }
                 }
             }

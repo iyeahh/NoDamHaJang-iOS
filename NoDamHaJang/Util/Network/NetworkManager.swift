@@ -9,6 +9,7 @@ import UIKit
 import Alamofire
 
 enum NetworkError: Error {
+    case unstableStatus
     case invaildURL
     case unknownResponse
 }
@@ -21,6 +22,11 @@ final class NetworkManager: RequestInterceptor {
 
     func callRequest<T: Decodable>(router: Router, completion: @escaping (Result<T, NetworkError>) -> Void) {
         var request: URLRequest
+
+        guard NetworkMonitor.shared.isConnected else {
+            completion(.failure(.unstableStatus))
+            return
+        }
 
         do {
             request = try router.asURLRequest()

@@ -30,6 +30,7 @@ struct LinkListView: View {
                 .listRowSeparator(.hidden)
             }
         }
+        .toastView(toast: $viewModel.output.toast)
         .navigationBarTitleDisplayMode(.inline)
         .task {
             viewModel.action(.viewOnTask)
