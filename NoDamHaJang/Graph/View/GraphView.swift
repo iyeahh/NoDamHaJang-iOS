@@ -28,7 +28,7 @@ struct GraphView: View {
 
     func GraphView() -> some View {
         VStack {
-            chartView()
+            ChartView(smokingDataList: viewModel.output.smokingDataList)
             descriptionView()
             Spacer()
         }
@@ -51,22 +51,6 @@ struct GraphView: View {
             .foregroundStyle(Constant.ColorType.purple)
             .overlay(alignment: Alignment(horizontal: .center, vertical: .center)) {
                 Text(text)
-            }
-    }
-
-    func chartView() -> some View {
-        RoundedRectangle(cornerRadius: 30)
-            .frame(width: UIScreen.main.bounds.width - 60)
-            .padding()
-            .frame(height: UIScreen.main.bounds.width - 60)
-            .foregroundStyle(Constant.ColorType.primary.opacity(0.5))
-            .overlay {
-                Chart(viewModel.output.smokingDataList, id: \.date) { element in
-                    BarMark(x: .value("날짜", element.chartDate), y: .value("흡연횟수", element.smokeCount))
-                }
-                .foregroundStyle(Constant.ColorType.purple)
-                .frame(height: 200)
-                .padding(.horizontal, 40)
             }
     }
 }

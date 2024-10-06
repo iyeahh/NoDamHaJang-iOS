@@ -408,6 +408,9 @@
         }
       }
     },
+    "흡연 횟수" : {
+
+    },
     "흡연 횟수 추이" : {
       "localizations" : {
         "en" : {
@@ -442,6 +445,7 @@
       }
     },
     "흡연횟수" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {

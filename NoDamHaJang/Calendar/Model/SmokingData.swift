@@ -7,7 +7,8 @@
 
 import SwiftUI
 
-struct SmokingData {
+struct SmokingData: Identifiable {
+    let id = UUID()
     let date: String
     let goalCount: Int
     var smokeCount: Int
